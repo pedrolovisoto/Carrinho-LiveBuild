@@ -20,6 +20,7 @@ body.editing .jp-aim,body.editing .jp-toast{display:none!important}
 <canvas id="view" tabindex="0" aria-label="Cena 3D com o carrinho de mercado"></canvas>
 
 <div class="lap" id="lap" hidden></div>
+<div id="fps" style="position:fixed;left:10px;top:10px;font:600 12px/1.2 system-ui,sans-serif;color:#fff;background:#1f2540aa;padding:4px 8px;border-radius:8px;pointer-events:none;z-index:5;display:none"></div>
 <div class="speed" id="speed"><b id="speedNum">0</b><span>km/h</span><em class="prof" id="profileName"></em></div>
 
 <div class="topbar">
@@ -43,6 +44,7 @@ body.editing .jp-aim,body.editing .jp-toast{display:none!important}
   <label class="check sel">FPS máximo <select id="selFps"></select></label>
   <label class="check sel">Resolução <select id="selRes"></select></label>
   <label class="check sel">Sombras <select id="selShadow"></select></label>
+  <label class="check"><input type="checkbox" id="chkFps"> Mostrar FPS (quadros por segundo e o pior quadro)</label>
   <label class="check"><input type="checkbox" id="chkAA"> Antialias (suaviza bordas; recarrega)</label>
   <label class="check"><input type="checkbox" id="chkSafety"> Rede de segurança (limita giro e derrapagem)</label>
   <label class="check"><input type="checkbox" id="chkSound" checked> Som</label>
@@ -2492,7 +2494,8 @@ var Bz = class {
       if (!this.active) return;
       this.decayAcc += (255 * e) / Math.max(0.1, t);
       let n = Math.floor(this.decayAcc);
-      if (n <= 0) return;
+      // v23: só percorre a textura (512×512) quando juntou 4 níveis de recuperação, não a cada quadro
+      if (n < 4) return;
       this.decayAcc -= n;
       let r = this.data,
         i = !1;
@@ -4260,6 +4263,7 @@ var LAYOUT_DEFAULT = { "versao": 2, "spawn": [0, 1.4, -7], "pecas": [
 ] };
 
 // ==== 35_pieces.js ====
+var PIECE_CELL = 48;
 // Monta as peças do layout: uma InstancedMesh por parte de cada modelo e colisores num corpo fixo próprio.
 // No modo jogo os coletáveis viram objetos de física (Bz) que a Jelly pega; no modo Editar tudo fica parado e clicável.
 var LEVEL_KEY = `lab-carrinho-nivel`;
@@ -4381,12 +4385,22 @@ var LevelPieces = class {
     let ids = [];
     this.layout.pecas.forEach((p, i) => p.m === m && (this.edit || !this.isLoose(p)) && ids.push(i));
     if (!ids.length || !KENNEY[m]) return;
-    let ns = catInfo(m).ns;
-    this.meshes[m] = kitParts(m).map(({ geo, mat }) => {
-      let im = new da(geo, mat, ids.length);
-      ids.forEach((pi, k) => im.setMatrixAt(k, this.matrix(this.layout.pecas[pi])));
-      return ((im.castShadow = !ns), (im.receiveShadow = !0), (im.frustumCulled = !1), (im.userData.ids = ids), this.group.add(im), im);
-    });
+    let ns = catInfo(m).ns, all = this.edit || catInfo(m).spin, groups = {};
+    // v20: no jogo as cópias são divididas em blocos de PIECE_CELL m, cada um com sua esfera de contorno, para a câmera
+    // e a sombra (que só cobre ~44 m em volta do carrinho) pularem o que está fora da vista; no editor e nas peças que giram, um bloco só
+    for (let pi of ids) {
+      let p = this.layout.pecas[pi], key = all ? 0 : Math.floor(p.x / PIECE_CELL) + `,` + Math.floor(p.z / PIECE_CELL);
+      (groups[key] ||= []).push(pi);
+    }
+    this.meshes[m] = [];
+    for (let key in groups) {
+      let g = groups[key];
+      for (let { geo, mat } of kitParts(m)) {
+        let im = new da(geo, mat, g.length);
+        g.forEach((pi, k) => im.setMatrixAt(k, this.matrix(this.layout.pecas[pi])));
+        ((im.castShadow = !ns), (im.receiveShadow = !0), (im.userData.ids = g), all ? (im.frustumCulled = !1) : im.computeBoundingSphere(), this.group.add(im), this.meshes[m].push(im));
+      }
+    }
   }
   // atualiza só a matriz de uma peça (mover, girar, escalar no editor)
   move(i) {
@@ -5786,7 +5800,8 @@ try {
   (cV.shadowMap.type = oV.shadowQ > 1 ? 2 : 1));
 var lV = new fr();
 ((lV.background = new lr(pz.sky)), (lV.fog = new dr(pz.sky, 70, 230)));
-var uV = new $o(35, innerWidth / innerHeight, 0.1, 600);
+// v20: o plano de corte acompanha a neblina (some de vez a 230 m); antes ia a 600 m e desenhava o que a neblina já escondia
+var uV = new $o(35, innerWidth / innerHeight, 0.1, 240);
 lV.add(new Vo(15398143, 7311231, 1.6));
 var dV = new os(16774111, 2.4);
 ((dV.castShadow = oV.shadowQ > 0),
@@ -5866,6 +5881,8 @@ function regrass() {
   fill(`selFps`, PERF_FPS, oV.fpsCap, (v) => (oV.fpsCap = v));
   fill(`selRes`, PERF_RES.map((v) => [v, String(v).replace(`.`, `,`) + `×`]), oV.pixRatio, (v) => ((oV.pixRatio = v), applyRes()));
   fill(`selShadow`, PERF_SHADOW.map((n, k) => [k, n]), oV.shadowQ, (v) => ((oV.shadowQ = v), _z(oV), location.reload()));
+  let cf = aV(`chkFps`), showF = () => (aV(`fps`).style.display = oV.showFps ? `` : `none`);
+  ((cf.checked = !!oV.showFps), showF(), cf.addEventListener(`change`, () => ((oV.showFps = cf.checked ? 1 : 0), _z(oV), showF())));
   let aa = aV(`chkAA`);
   ((aa.checked = !!oV.antialias), aa.addEventListener(`change`, () => ((oV.antialias = aa.checked ? 1 : 0), _z(oV), location.reload())));
 }
@@ -6068,18 +6085,41 @@ var AV = iV({
     onReset: kV,
   }),
   jV = performance.now(),
-  MV = !1;
+  MV = !1,
+  FPS_NEXT = 0,
+  FPS_N = 0,
+  FPS_WORST = 0,
+  FPS_CPU = 0,
+  FPS_PHYS = 0,
+  FPS_REND = 0,
+  FPS_T0 = 0;
+// contador de FPS (v21, Ajustes → Mostrar FPS): quadros desenhados por segundo, o quadro mais demorado nesse segundo
+// e (v22) o maior tempo de processador gasto num quadro; v23 separa a física (passos do Rapier e do carrinho) e o
+// desenho (cV.render: se a placa de vídeo está atrasada, o navegador segura o processador aqui)
+function fpsMeter(ms, now) {
+  if (!oV.showFps) return;
+  (FPS_N++, (FPS_WORST = Math.max(FPS_WORST, ms)));
+  if (now - FPS_T0 < 1e3) return;
+  ((aV(`fps`).textContent = Math.round((FPS_N * 1e3) / (now - FPS_T0)) + ` FPS · pior ` + Math.round(FPS_WORST) + ` ms · CPU ` + FPS_CPU.toFixed(1) + ` ms (física ` + FPS_PHYS.toFixed(1) + ` · desenho ` + FPS_REND.toFixed(1) + `)`), (FPS_N = 0), (FPS_WORST = 0), (FPS_CPU = 0), (FPS_PHYS = 0), (FPS_REND = 0), (FPS_T0 = now));
+}
 function NV() {
   let e = performance.now();
-  // limite de FPS: pula quadros do navegador (tela de 120 Hz desenha a 60); a folga de 2 ms evita perder quadro bom
-  if (oV.fpsCap && e - jV < 1e3 / oV.fpsCap - 2) return;
+  // limite de FPS: pula quadros do navegador (tela de 120 Hz desenha a 60). v21: o horário do próximo quadro anda em passos
+  // fixos (FPS_NEXT += intervalo) em vez de contar a partir do último; antes um quadro do navegador que chegava um pouco
+  // adiantado era pulado e o seguinte saía com 25 ms, o que dava a sensação de engasgo
+  if (oV.fpsCap) {
+    let iv = 1e3 / oV.fpsCap;
+    if (e < FPS_NEXT - 4) return;
+    FPS_NEXT = e - FPS_NEXT > iv ? e + iv : FPS_NEXT + iv;
+  }
   let t = Math.min(0.1, (e - jV) / 1e3);
+  fpsMeter(e - jV, e);
   jV = e;
   if (EDITOR.on) return (EDITOR.frame(t), GRASS.forEach((g) => g.update(uV.position)), cV.render(lV, uV));
   let n = mapControls(OV.read());
   // mira da gelatina: o Abanab tira os pés do chão e o empurrão perde força
   n.aim && n.throttle > 0 && (n.throttle *= oV.aimPush);
-  let
+  let p0 = performance.now(),
     r = pV.update(t, (e) => {
       (yV.preStep(e, n),
         fV.step(mV),
@@ -6088,6 +6128,7 @@ function NV() {
         TV(),
         DV(e));
     });
+  FPS_PHYS = Math.max(FPS_PHYS, performance.now() - p0);
   (bV.update(t, yV, r, oV), hV.render(r), PIECES.update(t), WORLD.update(t, trackLocal(yV.body.translation())));
   let i = yV.state;
   (xV.update(
@@ -6121,7 +6162,9 @@ function NV() {
     OV.firstInputAt &&
       e - OV.firstInputAt > 9e3 &&
       aV(`hint`).classList.add(`gone`),
+    (p0 = performance.now()),
     cV.render(lV, uV),
+    (FPS_REND = Math.max(FPS_REND, performance.now() - p0)),
     MV || ((MV = !0), aV(`overlay`).classList.add(`hidden`)));
 }
 // Tela cheia: botão ⛶ na barra de cima (e tecla F). Dentro do visualizador de artifacts o navegador pode recusar.
@@ -6147,7 +6190,25 @@ function PV() {
   }
   wV.geometry.attributes.position.needsUpdate = !0;
 }
-(cV.setAnimationLoop(NV),
+// v22: o contador mede também o tempo de processador do quadro (física, lógica e montagem do desenho); a placa de vídeo
+// trabalha depois, em paralelo. Se o FPS cai com o processador folgado, o gargalo é a placa (resolução, sombra, grama)
+// v24: aquecimento. O renderizador prepara cada objeto (programa, ligações, sombra) na primeira vez que ele aparece; com o
+// recorte da v20 isso acontecia no meio do jogo, ao entrar numa área nova, e dava picos de 50 a 70 ms no desenho. Aqui
+// tudo é desenhado uma vez com o recorte desligado, ainda atrás da tela de carregamento.
+{
+  let off = [];
+  lV.traverse((o) => o.frustumCulled && (off.push(o), (o.frustumCulled = !1)));
+  try {
+    cV.render(lV, uV);
+  } catch (e) {
+    console.warn(`aquecimento`, e);
+  }
+  off.forEach((o) => (o.frustumCulled = !0));
+}
+(cV.setAnimationLoop((ts) => {
+  let s0 = performance.now();
+  (NV(ts), oV.showFps && (FPS_CPU = Math.max(FPS_CPU, performance.now() - s0)));
+}),
   addEventListener(`resize`, () => {
     ((uV.aspect = innerWidth / innerHeight),
       uV.updateProjectionMatrix(),
@@ -6164,7 +6225,7 @@ function PV() {
   (aV(`chkCutout`).checked = !!oV.cutout),
   aV(`chkCutout`).addEventListener(`change`, (e) => ((oV.cutout = e.target.checked ? 1 : 0), _z(oV))),
   aV(`view`).focus(),
-  (window.__lab = { cart: yV, cfg: oV, input: OV, world: fV, camera: uV, cam: xV, mapControls, WORLD, HELD, JPOW, vis: bV, items: hV, PIECES, EDITOR, SURFACES, LEVEL: () => LEVEL }));
+  (window.__lab = { renderer: cV, cart: yV, cfg: oV, input: OV, world: fV, camera: uV, cam: xV, mapControls, WORLD, HELD, JPOW, vis: bV, items: hV, PIECES, EDITOR, SURFACES, LEVEL: () => LEVEL }));
 
 // ==== 95_editor.js ====
 // Editor de nível (etapa 1): câmera livre, lista de modelos, colocar, mover, girar, escalar, duplicar e apagar peças
