@@ -40,6 +40,10 @@ body.editing .jp-aim,body.editing .jp-toast{display:none!important}
   <label class="check sel">Controle <select id="selControl"></select></label>
   <label class="check sel">Rodas <select id="selProfile"></select></label>
   <label class="check sel">Grama <select id="selGrass"></select></label>
+  <label class="check sel">FPS máximo <select id="selFps"></select></label>
+  <label class="check sel">Resolução <select id="selRes"></select></label>
+  <label class="check sel">Sombras <select id="selShadow"></select></label>
+  <label class="check"><input type="checkbox" id="chkAA"> Antialias (suaviza bordas; recarrega)</label>
   <label class="check"><input type="checkbox" id="chkSafety"> Rede de segurança (limita giro e derrapagem)</label>
   <label class="check"><input type="checkbox" id="chkSound" checked> Som</label>
   <label class="check"><input type="checkbox" id="chkDebug"> Mostrar raios da suspensão</label>
@@ -5753,9 +5757,21 @@ var aV = (e) => document.getElementById(e),
   oV = gz(),
   sV = (e) => new T(e.x, e.y, e.z),
   cV;
+// Desempenho (v19): no celular o padrão poupa bateria e calor (resolução 1,5, sombra leve, 60 FPS mesmo em tela de 120 Hz)
+var MOBILE = matchMedia(`(pointer:coarse)`).matches;
+oV.fpsCap ??= 60;
+oV.pixRatio ??= MOBILE ? 1.5 : 2;
+oV.shadowQ ??= MOBILE ? 1 : 2;
+oV.antialias ??= 1;
+var PERF_RES = [0.75, 1, 1.25, 1.5, 2],
+  PERF_FPS = [[30, `30`], [60, `60`], [0, `Sem limite`]],
+  PERF_SHADOW = [`Desligadas`, `Leves`, `Altas`];
+function applyRes() {
+  (cV.setPixelRatio(Math.min(devicePixelRatio, oV.pixRatio)), cV.setSize(innerWidth, innerHeight));
+}
 try {
   (await Promise.all([uz.init(), kitUnpack()]),
-    (cV = new xF({ canvas: aV(`view`), antialias: !0 })),
+    (cV = new xF({ canvas: aV(`view`), antialias: !!oV.antialias })),
     await cV.init());
 } catch (e) {
   throw (
@@ -5765,17 +5781,16 @@ try {
     e
   );
 }
-(cV.setPixelRatio(Math.min(devicePixelRatio, 2)),
-  cV.setSize(innerWidth, innerHeight),
-  (cV.shadowMap.enabled = !0),
-  (cV.shadowMap.type = 2));
+(applyRes(),
+  (cV.shadowMap.enabled = oV.shadowQ > 0),
+  (cV.shadowMap.type = oV.shadowQ > 1 ? 2 : 1));
 var lV = new fr();
 ((lV.background = new lr(pz.sky)), (lV.fog = new dr(pz.sky, 70, 230)));
 var uV = new $o(35, innerWidth / innerHeight, 0.1, 600);
 lV.add(new Vo(15398143, 7311231, 1.6));
 var dV = new os(16774111, 2.4);
-((dV.castShadow = !0),
-  dV.shadow.mapSize.set(2048, 2048),
+((dV.castShadow = oV.shadowQ > 0),
+  dV.shadow.mapSize.setScalar(oV.shadowQ > 1 ? 2048 : 1024),
   Object.assign(dV.shadow.camera, {
     left: -22,
     right: 22,
@@ -5836,6 +5851,23 @@ function regrass() {
     ((op.value = k), (op.textContent = g.name), sg.appendChild(op));
   });
   ((sg.value = oV.grassQuality), sg.addEventListener(`change`, () => ((oV.grassQuality = +sg.value), _z(oV), buildGrass(oV.grassQuality))));
+}
+// Ajustes de desempenho: FPS e resolução valem na hora; sombra e antialias recarregam a página (o renderizador é montado na partida)
+{
+  let fill = (id, list, val, on) => {
+    let el = aV(id);
+    (list.forEach(([v, n]) => {
+      let op = document.createElement(`option`);
+      ((op.value = v), (op.textContent = n), el.appendChild(op));
+    }),
+      (el.value = val),
+      el.addEventListener(`change`, () => (on(+el.value), _z(oV))));
+  };
+  fill(`selFps`, PERF_FPS, oV.fpsCap, (v) => (oV.fpsCap = v));
+  fill(`selRes`, PERF_RES.map((v) => [v, String(v).replace(`.`, `,`) + `×`]), oV.pixRatio, (v) => ((oV.pixRatio = v), applyRes()));
+  fill(`selShadow`, PERF_SHADOW.map((n, k) => [k, n]), oV.shadowQ, (v) => ((oV.shadowQ = v), _z(oV), location.reload()));
+  let aa = aV(`chkAA`);
+  ((aa.checked = !!oV.antialias), aa.addEventListener(`change`, () => ((oV.antialias = aa.checked ? 1 : 0), _z(oV), location.reload())));
 }
 var xV = new eV(uV, vV),
   SV = new tV(lV),
@@ -6038,8 +6070,10 @@ var AV = iV({
   jV = performance.now(),
   MV = !1;
 function NV() {
-  let e = performance.now(),
-    t = Math.min(0.1, (e - jV) / 1e3);
+  let e = performance.now();
+  // limite de FPS: pula quadros do navegador (tela de 120 Hz desenha a 60); a folga de 2 ms evita perder quadro bom
+  if (oV.fpsCap && e - jV < 1e3 / oV.fpsCap - 2) return;
+  let t = Math.min(0.1, (e - jV) / 1e3);
   jV = e;
   if (EDITOR.on) return (EDITOR.frame(t), GRASS.forEach((g) => g.update(uV.position)), cV.render(lV, uV));
   let n = mapControls(OV.read());
@@ -6117,7 +6151,12 @@ function PV() {
   addEventListener(`resize`, () => {
     ((uV.aspect = innerWidth / innerHeight),
       uV.updateProjectionMatrix(),
-      cV.setSize(innerWidth, innerHeight));
+      applyRes());
+  }),
+  // aba oculta ou tela apagada: o laço já para sozinho; o som também para
+  document.addEventListener(`visibilitychange`, () => {
+    let c = CV.ctx;
+    c && (document.hidden ? c.suspend() : c.state === `suspended` && c.resume());
   }),
   aV(`chkColliders`).addEventListener(`change`, (e) => setColDbg(e.target.checked)),
   [`btnFull`, `edFull`].forEach((id) => aV(id).addEventListener(`click`, toggleFull)),
