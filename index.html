@@ -7,13 +7,44 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>:root{--ink:#1f2540;--ink-soft:#4a5275;--paper:#f7f8fb;--panel:#f7f8fbf0;--line:#1f254024;--accent:#f2b134;--accent-ink:#1f2540;--sky:#b9d4e3;--font:"Chakra Petch", "Segoe UI", system-ui, -apple-system, sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--ink:#eef0f8;--ink-soft:#aab1cf;--paper:#161a2b;--panel:#161a2bf0;--line:#eef0f824}}:root[data-theme=dark]{--ink:#eef0f8;--ink-soft:#aab1cf;--paper:#161a2b;--panel:#161a2bf0;--line:#eef0f824}*,:before,:after{box-sizing:inherit}html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}body{background:var(--sky);height:100%;font-family:var(--font);color:var(--ink);-webkit-user-select:none;user-select:none;touch-action:none;margin:0;overflow:hidden}canvas#view{outline:none;width:100%;height:100%;display:block;position:fixed;inset:0}.speed{left:20px;bottom:calc(18px + env(safe-area-inset-bottom,0px));color:#1f2540;pointer-events:none;line-height:.9;position:fixed}.speed b{font-variant-numeric:tabular-nums;letter-spacing:-.02em;font-size:clamp(44px,8vw,72px);font-weight:700;display:block}.speed span{opacity:.7;font-size:15px;font-weight:600}.speed.boost b{color:#c6461f}.topbar{top:calc(14px + env(safe-area-inset-top,0px));gap:8px;display:flex;position:fixed;right:14px}button{font:inherit;cursor:pointer}.btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:9px;padding:9px 14px;font-size:15px;font-weight:600}.btn:hover{border-color:var(--ink-soft)}.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:#0000}:focus-visible{outline:3px solid var(--accent);outline-offset:2px}.hint{left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:12px;max-width:min(560px,100% - 200px);padding:12px 16px;font-size:14px;line-height:1.6;transition:opacity .6s;position:fixed;transform:translate(-50%)}.hint.gone{opacity:0;pointer-events:none}.hint kbd{font:inherit;border:1px solid var(--line);background:var(--paper);border-radius:5px;padding:1px 6px;font-weight:600}@media (max-width:720px){.hint{display:none}}.panel{background:var(--panel);border-left:1px solid var(--line);width:min(360px,100%);height:100%;padding:calc(16px + env(safe-area-inset-top,0px)) 18px calc(18px + env(safe-area-inset-bottom,0px));-webkit-user-select:text;user-select:text;touch-action:pan-y;transition:transform .28s cubic-bezier(.2,.8,.2,1);position:fixed;top:0;right:0;overflow-y:auto;transform:translate(105%)}.panel.open{transform:none}.panel header{justify-content:space-between;align-items:center;margin-bottom:6px;display:flex}.panel h2{margin:0;font-size:22px;font-weight:700}.panel code{font-size:13px}.panel p.lead{color:var(--ink-soft);margin:0 0 14px;font-size:14px;line-height:1.5}.panel h3{border-top:1px solid var(--line);margin:20px 0 6px;padding-top:14px;font-size:16px;font-weight:700}.row{grid-template-columns:1fr auto;align-items:center;gap:2px 10px;margin:9px 0;display:grid}.row label{font-size:14px;font-weight:500}.row output{font-variant-numeric:tabular-nums;color:var(--ink-soft);font-size:13px}.row input[type=range]{accent-color:#d9952a;grid-column:1/-1;width:100%}.check{align-items:center;gap:8px;margin:10px 0;font-size:14px;display:flex}.actions{flex-wrap:wrap;gap:8px;margin-top:18px;display:flex}textarea.dump{background:var(--paper);width:100%;height:160px;color:var(--ink);border:1px solid var(--line);border-radius:8px;margin-top:10px;padding:8px;font:12px/1.4 ui-monospace,Menlo,Consolas,monospace}@media (prefers-reduced-motion:reduce){.panel,.hint{transition:none}}.touch{display:none}@media (pointer:coarse){.touch{display:block}}.stick{left:calc(24px + env(safe-area-inset-left,0px));bottom:calc(110px + env(safe-area-inset-bottom,0px));background:#1f25402e;border:2px solid #ffffff80;border-radius:50%;width:130px;height:130px;position:fixed}.stick i{background:#ffffffd9;border-radius:50%;width:56px;height:56px;margin:-28px 0 0 -28px;position:absolute;top:50%;left:50%}.tbtns{right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(28px + env(safe-area-inset-bottom,0px));flex-direction:column;gap:12px;display:flex;position:fixed}.tbtns button{color:#fff;background:#1f25408c;border:2px solid #fff9;border-radius:50%;width:76px;height:76px;font-size:14px;font-weight:700}.tbtns button.on{background:var(--accent);color:var(--accent-ink)}.overlay{background:var(--sky);z-index:10;text-align:center;place-items:center;padding:24px;display:grid;position:fixed;inset:0}.overlay div{color:#1f2540;max-width:440px;font-size:17px;line-height:1.5}.overlay.hidden{display:none}
-.speed .prof{display:block;font-style:normal;font-size:13px;font-weight:600;opacity:.75;margin-top:6px;max-width:60vw}.check.sel select{font:inherit;margin-left:8px;max-width:220px}@media (pointer:coarse){.hint{display:none}.speed{top:calc(12px + env(safe-area-inset-top,0px));bottom:auto;left:calc(16px + env(safe-area-inset-left,0px))}.speed b{font-size:40px}.stick{bottom:calc(24px + env(safe-area-inset-bottom,0px));width:150px;height:150px}.tbtns button.big{width:104px;height:104px;font-size:16px}}.lap{left:50%;top:calc(14px + env(safe-area-inset-top,0px));transform:translate(-50%);background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:8px 18px;text-align:center;pointer-events:none;position:fixed;line-height:1.15}.lap[hidden]{display:none}.lap b{font-variant-numeric:tabular-nums;font-size:30px;font-weight:700;display:block}.lap em{font-style:normal;color:#c6461f;font-weight:700;font-size:14px;display:block}.lap span{font-size:13px;font-weight:600;opacity:.75}.ed[hidden],.ed [hidden]{display:none!important}body.editing .topbar,body.editing .speed,body.editing .lap,body.editing .hint,body.editing .touch,body.editing .panel{display:none!important}.ed-bar{top:calc(14px + env(safe-area-inset-top,0px));right:14px;gap:8px;display:flex;position:fixed;flex-wrap:wrap;justify-content:flex-end}.ed-bar .btn:disabled{opacity:.45;cursor:default}.ed-lib,.ed-file{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;position:fixed;overflow-y:auto;touch-action:pan-y;-webkit-user-select:none;user-select:none}.ed-lib{left:14px;top:calc(14px + env(safe-area-inset-top,0px));width:290px;max-height:calc(100% - 130px)}.ed-file{right:14px;top:calc(66px + env(safe-area-inset-top,0px));width:300px;max-height:calc(100% - 180px)}.ed-file h3{margin:0 0 4px;font-size:17px}.ed-file p{margin:0 0 10px;font-size:13px;line-height:1.45;color:var(--ink-soft)}.ed-file .actions{margin-top:8px}.ed-file textarea{background:var(--paper);width:100%;height:120px;color:var(--ink);border:1px solid var(--line);border-radius:8px;margin-top:8px;padding:8px;font:12px/1.4 ui-monospace,Menlo,Consolas,monospace;-webkit-user-select:text;user-select:text}.ed-lib input[type=search]{font:inherit;width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}.ed-tabs{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0}.ed-tabs button,.ed-list button,.ed-tools button{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:8px;font-weight:600}.ed-tabs button{padding:5px 9px;font-size:13px}.ed-tabs button.on{background:var(--accent);color:var(--accent-ink);border-color:#0000}.ed-list{display:grid;grid-template-columns:1fr 1fr;gap:6px}.ed-list button{padding:9px 6px;font-size:13px;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ed-list button:active,.ed-tools button:active{background:var(--accent)}.ed-sel{left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translate(-50%);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;position:fixed;max-width:calc(100% - 24px)}.ed-name{font-weight:700;font-size:14px;margin-bottom:8px}.ed-tools{display:flex;flex-wrap:wrap;gap:6px}.ed-tools button{min-width:44px;height:44px;padding:0 10px;font-size:18px}.ed-tools button.txt{font-size:14px}.ed-tools button.danger{color:#c6461f}.ed-flags{display:flex;gap:16px;margin-top:8px;font-size:14px}.ed-flags label{display:flex;gap:6px;align-items:center}.ed-flags select,.ed-nums input{font:inherit;font-size:14px;border:1px solid var(--line);border-radius:7px;background:var(--paper);color:var(--ink);padding:5px 6px}.ed-modes{display:flex;gap:4px;margin-bottom:8px}.ed-modes button{flex:1;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:8px;padding:7px 8px;font-weight:600;font-size:14px}.ed-modes button.on{background:var(--accent);color:var(--accent-ink);border-color:#0000}.ed-nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-bottom:8px}.ed-nums label{display:flex;flex-direction:column;font-size:12px;font-weight:600;color:var(--ink-soft);gap:2px}.ed-nums input{width:100%;min-width:0;-webkit-user-select:text;user-select:text}.ed-list button{display:flex;align-items:center;gap:6px}.ed-list img{width:40px;height:40px;flex:none;object-fit:contain}.ed-list img:not([src]){visibility:hidden}.ed-list span{overflow:hidden;text-overflow:ellipsis}.ed-toast{left:50%;top:calc(70px + env(safe-area-inset-top,0px));transform:translate(-50%);background:var(--ink);color:var(--paper);border-radius:10px;padding:8px 14px;font-size:14px;font-weight:600;position:fixed;pointer-events:none;max-width:calc(100% - 32px)}.ed-help{left:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));max-width:300px;font-size:12px;line-height:1.45;color:#1f2540cc;position:fixed;pointer-events:none}.ed-help kbd{font:inherit;font-weight:700}.ed-sel:not([hidden])~.ed-help{display:none}@media (max-width:720px),(pointer:coarse){.ed-lib{left:0;right:0;top:auto;bottom:0;width:auto;max-height:46vh;border-radius:14px 14px 0 0;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px))}.ed-file{left:12px;right:12px;width:auto}.ed-help{display:none}.ed-bar{left:12px;right:12px}.ed-bar .btn{padding:9px 11px}.ed-sel{left:0;right:0;transform:none;max-width:none;border-radius:14px 14px 0 0;bottom:0;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px))}}
+  <style>:root{--ink:#1f2540;--ink-soft:#4a5275;--paper:#f7f8fb;--panel:#f7f8fbf0;--line:#1f254024;--accent:#f2b134;--accent-ink:#1f2540;--sky:#b9d4e3;--font:"Chakra Petch", "Segoe UI", system-ui, -apple-system, sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--ink:#eef0f8;--ink-soft:#aab1cf;--paper:#161a2b;--panel:#161a2bf0;--line:#eef0f824}}:root[data-theme=dark]{--ink:#eef0f8;--ink-soft:#aab1cf;--paper:#161a2b;--panel:#161a2bf0;--line:#eef0f824}*,:before,:after{box-sizing:inherit}html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}body{background:var(--sky);height:100%;font-family:var(--font);color:var(--ink);-webkit-user-select:none;user-select:none;touch-action:none;margin:0;overflow:hidden}canvas#view{outline:none;width:100%;height:100%;display:block;position:fixed;inset:0}.speed{left:20px;bottom:calc(18px + env(safe-area-inset-bottom,0px));color:#1f2540;pointer-events:none;line-height:.9;position:fixed}.speed b{font-variant-numeric:tabular-nums;letter-spacing:-.02em;font-size:clamp(44px,8vw,72px);font-weight:700;display:block}.speed span{opacity:.7;font-size:15px;font-weight:600}.speed.boost b{color:#c6461f}.topbar{top:calc(14px + env(safe-area-inset-top,0px));gap:8px;display:flex;position:fixed;right:calc(14px + env(safe-area-inset-right,0px))}button{font:inherit;cursor:pointer}.btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:9px;padding:9px 14px;font-size:15px;font-weight:600}.btn:hover{border-color:var(--ink-soft)}.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:#0000}:focus-visible{outline:3px solid var(--accent);outline-offset:2px}.hint{left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:12px;max-width:min(560px,100% - 200px);padding:12px 16px;font-size:14px;line-height:1.6;transition:opacity .6s;position:fixed;transform:translate(-50%)}.hint.gone{opacity:0;pointer-events:none}.hint kbd{font:inherit;border:1px solid var(--line);background:var(--paper);border-radius:5px;padding:1px 6px;font-weight:600}@media (max-width:720px){.hint{display:none}}.panel{background:var(--panel);border-left:1px solid var(--line);width:min(360px,100%);height:100%;padding:calc(16px + env(safe-area-inset-top,0px)) 18px calc(18px + env(safe-area-inset-bottom,0px));-webkit-user-select:text;user-select:text;touch-action:pan-y;transition:transform .28s cubic-bezier(.2,.8,.2,1);position:fixed;top:0;right:0;overflow-y:auto;transform:translate(105%)}.panel.open{transform:none}.panel header{justify-content:space-between;align-items:center;margin-bottom:6px;display:flex}.panel h2{margin:0;font-size:22px;font-weight:700}.panel code{font-size:13px}.panel p.lead{color:var(--ink-soft);margin:0 0 14px;font-size:14px;line-height:1.5}.panel h3{border-top:1px solid var(--line);margin:20px 0 6px;padding-top:14px;font-size:16px;font-weight:700}.row{grid-template-columns:1fr auto;align-items:center;gap:2px 10px;margin:9px 0;display:grid}.row label{font-size:14px;font-weight:500}.row output{font-variant-numeric:tabular-nums;color:var(--ink-soft);font-size:13px}.row input[type=range]{accent-color:#d9952a;grid-column:1/-1;width:100%}.check{align-items:center;gap:8px;margin:10px 0;font-size:14px;display:flex}.actions{flex-wrap:wrap;gap:8px;margin-top:18px;display:flex}textarea.dump{background:var(--paper);width:100%;height:160px;color:var(--ink);border:1px solid var(--line);border-radius:8px;margin-top:10px;padding:8px;font:12px/1.4 ui-monospace,Menlo,Consolas,monospace}@media (prefers-reduced-motion:reduce){.panel,.hint{transition:none}}.touch{display:none}@media (pointer:coarse){.touch{display:block}}.stick{inset-inline-start:calc(24px + var(--sa-x));bottom:calc(110px + env(safe-area-inset-bottom,0px));background:#1f25402e;border:2px solid #ffffff80;border-radius:50%;width:130px;height:130px;position:fixed}.stick i{background:#ffffffd9;border-radius:50%;width:56px;height:56px;margin:-28px 0 0 -28px;position:absolute;top:50%;left:50%}.overlay{background:var(--sky);z-index:10;text-align:center;place-items:center;padding:24px;display:grid;position:fixed;inset:0}.overlay div{color:#1f2540;max-width:440px;font-size:17px;line-height:1.5}.overlay.hidden{display:none}
+.speed .prof{display:block;font-style:normal;font-size:13px;font-weight:600;opacity:.75;margin-top:6px;max-width:60vw}.check.sel select{font:inherit;margin-left:8px;max-width:220px}@media (pointer:coarse){.hint{display:none}.speed{top:calc(12px + env(safe-area-inset-top,0px));bottom:auto;left:calc(16px + env(safe-area-inset-left,0px))}.speed b{font-size:40px}.stick{bottom:calc(24px + env(safe-area-inset-bottom,0px));width:150px;height:150px}}.lap{left:50%;top:calc(14px + env(safe-area-inset-top,0px));transform:translate(-50%);background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:8px 18px;text-align:center;pointer-events:none;position:fixed;line-height:1.15}.lap[hidden]{display:none}.lap b{font-variant-numeric:tabular-nums;font-size:30px;font-weight:700;display:block}.lap em{font-style:normal;color:#c6461f;font-weight:700;font-size:14px;display:block}.lap span{font-size:13px;font-weight:600;opacity:.75}.ed[hidden],.ed [hidden]{display:none!important}body.editing .topbar,body.editing .speed,body.editing .lap,body.editing .hint,body.editing .touch,body.editing .panel{display:none!important}.ed-bar{top:calc(14px + env(safe-area-inset-top,0px));right:14px;gap:8px;display:flex;position:fixed;flex-wrap:wrap;justify-content:flex-end}.ed-bar .btn:disabled{opacity:.45;cursor:default}.ed-lib,.ed-file{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;position:fixed;overflow-y:auto;touch-action:pan-y;-webkit-user-select:none;user-select:none}.ed-lib{left:14px;top:calc(14px + env(safe-area-inset-top,0px));width:290px;max-height:calc(100% - 130px)}.ed-file{right:14px;top:calc(66px + env(safe-area-inset-top,0px));width:300px;max-height:calc(100% - 180px)}.ed-file h3{margin:0 0 4px;font-size:17px}.ed-file p{margin:0 0 10px;font-size:13px;line-height:1.45;color:var(--ink-soft)}.ed-file .actions{margin-top:8px}.ed-file textarea{background:var(--paper);width:100%;height:120px;color:var(--ink);border:1px solid var(--line);border-radius:8px;margin-top:8px;padding:8px;font:12px/1.4 ui-monospace,Menlo,Consolas,monospace;-webkit-user-select:text;user-select:text}.ed-lib input[type=search]{font:inherit;width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}.ed-tabs{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0}.ed-tabs button,.ed-list button,.ed-tools button{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:8px;font-weight:600}.ed-tabs button{padding:5px 9px;font-size:13px}.ed-tabs button.on{background:var(--accent);color:var(--accent-ink);border-color:#0000}.ed-list{display:grid;grid-template-columns:1fr 1fr;gap:6px}.ed-list button{padding:9px 6px;font-size:13px;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ed-list button:active,.ed-tools button:active{background:var(--accent)}.ed-sel{left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translate(-50%);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;position:fixed;max-width:calc(100% - 24px)}.ed-name{font-weight:700;font-size:14px;margin-bottom:8px}.ed-tools{display:flex;flex-wrap:wrap;gap:6px}.ed-tools button{min-width:44px;height:44px;padding:0 10px;font-size:18px}.ed-tools button.txt{font-size:14px}.ed-tools button.danger{color:#c6461f}.ed-flags{display:flex;gap:16px;margin-top:8px;font-size:14px}.ed-flags label{display:flex;gap:6px;align-items:center}.ed-flags select,.ed-nums input{font:inherit;font-size:14px;border:1px solid var(--line);border-radius:7px;background:var(--paper);color:var(--ink);padding:5px 6px}.ed-modes{display:flex;gap:4px;margin-bottom:8px}.ed-modes button{flex:1;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:8px;padding:7px 8px;font-weight:600;font-size:14px}.ed-modes button.on{background:var(--accent);color:var(--accent-ink);border-color:#0000}.ed-nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-bottom:8px}.ed-nums label{display:flex;flex-direction:column;font-size:12px;font-weight:600;color:var(--ink-soft);gap:2px}.ed-nums input{width:100%;min-width:0;-webkit-user-select:text;user-select:text}.ed-list button{display:flex;align-items:center;gap:6px}.ed-list img{width:40px;height:40px;flex:none;object-fit:contain}.ed-list img:not([src]){visibility:hidden}.ed-list span{overflow:hidden;text-overflow:ellipsis}.ed-toast{left:50%;top:calc(70px + env(safe-area-inset-top,0px));transform:translate(-50%);background:var(--ink);color:var(--paper);border-radius:10px;padding:8px 14px;font-size:14px;font-weight:600;position:fixed;pointer-events:none;max-width:calc(100% - 32px)}.ed-help{left:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));max-width:300px;font-size:12px;line-height:1.45;color:#1f2540cc;position:fixed;pointer-events:none}.ed-help kbd{font:inherit;font-weight:700}.ed-sel:not([hidden])~.ed-help{display:none}@media (max-width:720px),(pointer:coarse){.ed-lib{left:0;right:0;top:auto;bottom:0;width:auto;max-height:46vh;border-radius:14px 14px 0 0;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px))}.ed-file{left:12px;right:12px;width:auto}.ed-help{display:none}.ed-bar{left:12px;right:12px}.ed-bar .btn{padding:9px 11px}.ed-sel{left:0;right:0;transform:none;max-width:none;border-radius:14px 14px 0 0;bottom:0;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px))}}
 .jp-aim{position:fixed;left:50%;top:50%;width:34px;height:34px;margin:-17px 0 0 -17px;border:3px solid #fff;border-radius:50%;box-shadow:0 0 0 2px #1f254066;pointer-events:none;transition:transform .12s}
 .jp-aim.lock{border-color:var(--accent);transform:scale(.92)}
 .jp-toast{position:fixed;left:50%;top:calc(70px + env(safe-area-inset-top,0px));transform:translate(-50%);background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:8px 14px;font-weight:700;pointer-events:none;opacity:0;transition:opacity .4s}
 .jp-toast.on{opacity:1}
 body.editing .jp-aim,body.editing .jp-toast{display:none!important}
+
+.tjelly i{position:absolute;left:50%;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:#ffffffb0;pointer-events:none;opacity:.8}
+.tbtns>.tjelly{border:3px solid #fffc;background:#2e9d6ab3;font-size:16px}.tbtns>.tjelly.on{background:var(--accent);color:var(--accent-ink)}.tbtns>.tjelly.off{opacity:.45}
+/* v28: botões do toque em grupo (cada um num lugar fixo, a partir do canto), lado invertível (body.mirror) e painel com área segura */
+:root{--sa-x:max(env(safe-area-inset-left,0px),env(safe-area-inset-right,0px))}
+.tbtns{position:fixed;inset-inline-end:calc(18px + var(--sa-x));bottom:calc(18px + env(safe-area-inset-bottom,0px));width:310px;height:290px;pointer-events:none}
+.tbtns>button{position:absolute;pointer-events:auto;color:#fff;background:#1f25408c;border:2px solid #fff9;border-radius:50%;font-size:14px;font-weight:700;padding:0;touch-action:none;--z:72px;width:var(--z);height:var(--z);inset-inline-end:var(--e);bottom:var(--b)}
+.tbtns>button.on{background:var(--accent);color:var(--accent-ink)}.tbtns>[hidden]{display:none}
+#tJump{--z:92px;--e:0px;--b:0px;font-size:16px}#tJelly{--z:96px;--e:108px;--b:0px}#tBoost{--z:72px;--e:4px;--b:108px}#tAim{--z:64px;--e:104px;--b:112px}#tShoot{--z:72px;--e:184px;--b:104px}#tHand{--z:64px;--e:14px;--b:194px}.tbtns>.sm{font-size:12px;line-height:1.1}
+.tbtns.acc #tAccel{--z:104px;--e:0px;--b:0px;font-size:16px}.tbtns.acc #tJump{--z:80px;--e:12px;--b:120px}.tbtns.acc #tBrake{--z:80px;--e:116px;--b:8px}.tbtns.acc #tJelly{--z:92px;--e:208px}.tbtns.acc #tBoost{--z:64px;--e:108px;--b:104px}.tbtns.acc #tAim{--z:60px;--e:188px;--b:108px}.tbtns.acc #tHand{--z:60px;--e:104px;--b:182px}.tbtns.acc #tShoot{--z:64px;--e:20px;--b:214px}
+body.mirror .touch{direction:rtl}
+body.mirror .topbar{right:auto;left:calc(14px + env(safe-area-inset-left,0px))}
+body.mirror .speed{left:auto;right:calc(20px + env(safe-area-inset-right,0px));text-align:right}
+body.mirror #fps{left:auto!important;right:10px}
+@media (pointer:coarse){#fps{top:calc(100px + env(safe-area-inset-top,0px))!important;left:calc(16px + env(safe-area-inset-left,0px))!important}body.mirror #fps{left:auto!important;right:calc(16px + env(safe-area-inset-right,0px))!important}body.mirror .speed{right:calc(16px + env(safe-area-inset-right,0px))}}
+@media (pointer:coarse) and (max-width:560px){.speed{top:calc(66px + env(safe-area-inset-top,0px))}#fps{top:calc(160px + env(safe-area-inset-top,0px))!important}}
+.panel{z-index:20;padding-top:0}
+.panel header{position:sticky;top:0;z-index:1;background:var(--paper);margin:0 -18px 6px;padding:calc(12px + env(safe-area-inset-top,0px)) 18px 10px;border-bottom:1px solid var(--line)}
+#btnClose{min-width:96px;min-height:46px}
+body.mirror .panel{right:auto;left:0;border-left:0;border-right:1px solid var(--line);transform:translate(-105%)}
+body.mirror .panel.open{transform:none}
+body.panel-open .touch,body.panel-open .topbar,body.panel-open .jp-aim{display:none!important}
+.row input[type=range]{touch-action:pan-y}
+@media (pointer:coarse){
+ .panel{width:min(420px,100%);padding-left:calc(18px + env(safe-area-inset-left,0px));padding-right:calc(64px + env(safe-area-inset-right,0px));background-image:repeating-linear-gradient(to bottom,#1f25402e 0 3px,#0000 3px 14px),linear-gradient(#1f254012,#1f254012);background-size:6px 100%,46px 100%;background-position:calc(100% - 20px - env(safe-area-inset-right,0px)) 0,right 0;background-repeat:no-repeat}
+ body.mirror .panel{padding-left:calc(64px + env(safe-area-inset-left,0px));padding-right:18px;background-position:calc(20px + env(safe-area-inset-left,0px)) 0,left 0}
+ .panel header{margin-right:calc(-64px - env(safe-area-inset-right,0px));padding-right:calc(18px + env(safe-area-inset-right,0px))}
+ body.mirror .panel header{margin-right:-18px;margin-left:calc(-64px - env(safe-area-inset-left,0px));padding-left:calc(18px + env(safe-area-inset-left,0px));padding-right:18px}
+ .panel .lead::after{content:" No celular, role pela faixa listrada na borda: ali nada é tocado sem querer.";}
+ .row{margin:16px 0}.row input[type=range]{height:30px}.check{margin:16px 0;min-height:30px}.check input[type=checkbox]{width:22px;height:22px;flex:none}.check.sel select{min-height:38px}
+}
 </style>
 </head>
 <body>
@@ -31,7 +62,7 @@ body.editing .jp-aim,body.editing .jp-toast{display:none!important}
 </div>
 
 <div class="hint" id="hint">
-  <kbd>W A S D</kbd> apontam para onde o carrinho vai (troque o controle em Ajustes). <kbd>B</kbd> trava as rodas de trás, <kbd>G</kbd> troca as rodas, <kbd>Shift</kbd> turbo, <kbd>Espaço</kbd> pulo, <kbd>R</kbd> desvirar, <kbd>H</kbd> buzina, <kbd>M</kbd> som, <kbd>C</kbd> mostra as colisões, <kbd>L</kbd> abre o editor de nível, <kbd>F</kbd> tela cheia. Arraste o mouse para girar a câmera. Botão direito (ou <kbd>E</kbd>) liga e desliga a mira da gelatina; na mira, clique (ou <kbd>Q</kbd>) para atirar.
+  <kbd>W A S D</kbd> apontam para onde o carrinho vai (troque o controle em Ajustes). <kbd>B</kbd> trava as rodas de trás, <kbd>G</kbd> troca as rodas, <kbd>Shift</kbd> turbo, <kbd>Espaço</kbd> pulo, <kbd>V</kbd> Jelly (toque puxa, segure para pegar na linha; vai para onde <kbd>W A S D</kbd> apontam), <kbd>R</kbd> desvirar, <kbd>H</kbd> buzina, <kbd>M</kbd> som, <kbd>C</kbd> mostra as colisões, <kbd>L</kbd> abre o editor de nível, <kbd>F</kbd> tela cheia. Arraste o mouse para girar a câmera. Botão direito (ou <kbd>E</kbd>) liga e desliga a mira da gelatina; na mira, clique (ou <kbd>Q</kbd>) para atirar.
 </div>
 
 <aside class="panel" id="panel" aria-label="Ajustes de física e sensação">
@@ -44,6 +75,7 @@ body.editing .jp-aim,body.editing .jp-toast{display:none!important}
   <label class="check sel">FPS máximo <select id="selFps"></select></label>
   <label class="check sel">Resolução <select id="selRes"></select></label>
   <label class="check sel">Sombras <select id="selShadow"></select></label>
+  <label class="check"><input type="checkbox" id="chkMirror"> Inverter os botões (controles do toque e painel para o outro lado)</label>
   <label class="check"><input type="checkbox" id="chkFps"> Mostrar FPS (quadros por segundo e o pior quadro)</label>
   <label class="check"><input type="checkbox" id="chkAA"> Antialias (suaviza bordas; recarrega)</label>
   <label class="check"><input type="checkbox" id="chkSafety"> Rede de segurança (limita giro e derrapagem)</label>
@@ -62,12 +94,15 @@ body.editing .jp-aim,body.editing .jp-toast{display:none!important}
 <div class="jp-toast" id="jpToast"></div>
 <div class="touch">
   <div class="stick" id="stick"><i id="knob"></i></div>
-  <div class="tbtns">
+  <div class="tbtns" id="tbtns">
     <button id="tJump">Pular</button>
     <button id="tBoost">Turbo</button>
     <button id="tShoot" hidden>Atirar</button>
     <button id="tAim">Mirar</button>
-    <button id="tAccel" class="big" hidden>Acelerar</button>
+    <button id="tAccel" hidden>Acelerar</button>
+    <button id="tBrake" hidden>Freio</button>
+    <button id="tHand" class="sm">Freio<br>de mão</button>
+    <button id="tJelly" class="tjelly" aria-label="Jelly: tocar puxa, arrastar escolhe a direção, segurar pega na linha"><i></i>Jelly</button>
   </div>
 </div>
 
@@ -1285,6 +1320,26 @@ var dz = {
     shotSpeed: 30,
     fetchTime: 0.5,
     aimCamSide: 0.8,
+    // Jelly: puxão, pegar na linha e peso (v25)
+    pullRange: 5,
+    pullForce: 1,
+    pullDur: 0.35,
+    pullKeep: 0.25,
+    pullExtend: 0.08,
+    pullStick: 0.06,
+    pullAlign: 1,
+    pullSteady: 1,
+    pullBounce: 7,
+    pullBounceMax: 1,
+    pullSteadyAfter: 0.5,
+    pullAirMax: 3,
+    pullCool: 0.35,
+    pullComboWin: 0.2,
+    pullComboGain: 0.25,
+    pullWidth: 1.6,
+    itemWeight: 0.25,
+    pullWeight: 0.1,
+    weightFall: 0.05,
     // Suspensão
     stiffness: 55,
     compression: 2.4,
@@ -1374,6 +1429,30 @@ var dz = {
         [`shotSpeed`, `Tiro: velocidade da ida (m/s)`, 5, 80, 1],
         [`fetchTime`, `Tiro: tempo da volta com o item (s)`, 0.15, 2, 0.05],
         [`aimCamSide`, `Mira: câmera para o lado do ombro (m)`, -2, 2, 0.1],
+      ],
+    ],
+    [
+      `Jelly: puxão e peso`,
+      [
+        [`pullRange`, `Puxão: alcance do Jelly vazio (m)`, 1, 15, 0.25],
+        [`pullForce`, `Puxão: força (1 = chega na ponta)`, 0.3, 2, 0.05],
+        [`pullDur`, `Puxão: duração (s)`, 0.1, 1, 0.01],
+        [`pullKeep`, `Puxão: velocidade que sobra no fim (fração)`, 0, 1, 0.05],
+        [`pullExtend`, `Puxão: tempo para esticar (s)`, 0.02, 0.4, 0.01],
+        [`pullStick`, `Puxão: tempo grudado antes de puxar (s)`, 0, 0.4, 0.01],
+        [`pullAlign`, `Puxão: vira o carrinho para a direção (0 desliga)`, 0, 2, 0.05],
+        [`pullBounce`, `Quique no fim do puxão no ar (m/s, 0 desliga)`, 0, 14, 0.25],
+        [`pullBounceMax`, `Quiques por pulo`, 0, 3, 1],
+        [`pullSteady`, `Puxão: segura o carrinho de pé (0 desliga)`, 0, 2, 0.05],
+        [`pullSteadyAfter`, `Puxão: segura de pé por mais (s)`, 0, 2, 0.05],
+        [`pullAirMax`, `Puxões por pulo (no ar)`, 1, 6, 1],
+        [`pullCool`, `Recarga no chão (s)`, 0, 2, 0.05],
+        [`pullComboWin`, `Combo no ar: janela no fim do puxão (s)`, 0, 0.6, 0.01],
+        [`pullComboGain`, `Combo no ar: alcance a mais por elo`, 0, 1, 0.05],
+        [`pullWidth`, `Segurar: largura da faixa que pega (m)`, 0.2, 4, 0.1],
+        [`itemWeight`, `Peso de cada item pego (kg ×10)`, 0, 1.5, 0.05],
+        [`pullWeight`, `Quanto o peso encurta o puxão (por kg ×10)`, 0, 0.4, 0.01],
+        [`weightFall`, `Peso: queda mais rápida no ar (por kg ×10)`, 0, 0.3, 0.01],
       ],
     ],
     [
@@ -4557,6 +4636,13 @@ var Uz = [
     get profile() {
       return PROFILES[this.cfg.profile] || PROFILES[0];
     }
+    // v25: massa do Jelly = a do painel + o que ele carrega ("tudo que o Jelly pega pesa"); cargo = itens no cesto
+    cargoMass() {
+      return (this.cargo || 0) * this.cfg.itemWeight;
+    }
+    jm() {
+      return this.cfg.jellyMass > 0 ? this.cfg.jellyMass + this.cargoMass() : 0;
+    }
     applyMass() {
       let m = this.cfg.cartMass;
       this.collider.setMassProperties(
@@ -4697,10 +4783,11 @@ var Uz = [
 
       // Jelly: aplica no carrinho a força da mola que segura a gelatina no cesto
       let J = this.jelly;
-      if (i.jellyMass > 0 && i.jellyFeedback > 0) {
+      if (this.jm() > 0 && i.jellyFeedback > 0) {
         let ja = JELLY_ANCHOR.clone().applyQuaternion(o).add(pos);
         J.applied = J.impulse.clone().multiplyScalar(i.jellyFeedback);
-        r.applyImpulseAtPoint(J.applied.clone(), ja, !0);
+        // v25: durante o puxão do Jelly (JPULL.steady) o empurrão vai no centro de massa, sem girar o carrinho
+        this.jellyNoTorque ? r.applyImpulse(J.applied.clone(), !0) : r.applyImpulseAtPoint(J.applied.clone(), ja, !0);
       } else J.applied = null;
       J.impulse.set(0, 0, 0);
 
@@ -4714,13 +4801,16 @@ var Uz = [
           .applyQuaternion(o)
           .multiplyScalar(i.airControl * e * 3 * (m / 10));
         r.applyTorqueImpulse(n2, !0);
+        // v25: com carga, cai mais rápido
+        let wf = i.weightFall * this.cargoMass();
+        wf > 0 && r.applyImpulse({ x: 0, y: -20 * wf * m * e, z: 0 }, !0);
       }
       (a.boosting && r.applyImpulse(fwd.clone().multiplyScalar(4 * m * e), !0),
         t.jumpQueued &&
           ((t.jumpQueued = !1),
           a.simTime - a.lastGrounded < 0.15 &&
             (r.applyImpulse(
-              s.clone().lerp(Gz, 0.5).normalize().multiplyScalar(i.jumpSpeed * (m + i.jellyMass * i.jellyFeedback * 0.5)),
+              s.clone().lerp(Gz, 0.5).normalize().multiplyScalar(i.jumpSpeed * (m + this.jm() * i.jellyFeedback * 0.5)),
               !0,
             ),
             this.emit(`jump`, { position: Kz(r.translation()) }))));
@@ -4787,7 +4877,7 @@ var Uz = [
       let J = this.jelly,
         K = c.jellyStiff,
         C = c.jellyDamp,
-        mr = c.jellyFeedback > 0 && c.jellyMass > 0 ? 1 + (c.jellyMass * c.jellyFeedback) / c.cartMass : 1,
+        mr = c.jellyFeedback > 0 && this.jm() > 0 ? 1 + (this.jm() * c.jellyFeedback) / c.cartMass : 1,
         rel = new T(0, -20, 0).sub(acc).applyQuaternion(qi),
         sub = 4,
         h = e / sub,
@@ -4815,8 +4905,8 @@ var Uz = [
         }
       }
       // reação no carrinho: mola (inclui o peso do Jelly) + batidas nas paredes do cesto
-      let springF = J.d.clone().sub(J.b).multiplyScalar(K).addScaledVector(J.v, C).multiplyScalar(c.jellyMass * e);
-      J.impulse.copy(springF.sub(wallDv.multiplyScalar(c.jellyMass)).applyQuaternion(q));
+      let springF = J.d.clone().sub(J.b).multiplyScalar(K).addScaledVector(J.v, C).multiplyScalar(this.jm() * e);
+      J.impulse.copy(springF.sub(wallDv.multiplyScalar(this.jm())).applyQuaternion(q));
       this.interp.snapshot();
     }
     respawn(e) {
@@ -5298,8 +5388,16 @@ var rV = class {
           jumpQueued: !1,
           aim: !1,
           shootQueued: !1,
+          // Jelly (v25): botão do puxão (tocar puxa, segurar estica e pega na linha, soltar puxa) e a direção dele
+          jellyQueued: !1,
+          jellyDown: !1,
+          dir2: { x: 0, y: 0 },
         }),
-        (this.touch = { x: 0, y: 0, boost: !1, accel: !1 }),
+        (this.touch = { x: 0, y: 0, boost: !1, accel: !1, jelly: !1, brake: !1, hand: !1 }),
+        // segundo analógico no toque: arrasto na metade direita da tela ou a partir do botão Jelly (x direita, y para cima)
+        // dir2R: arrasto na metade direita; dir2B: arrasto a partir do botão Jelly (vale mais que o outro)
+        (this.dir2R = { x: 0, y: 0 }),
+        (this.dir2B = { x: 0, y: 0 }),
         // mira da gelatina (v17): modo liga/desliga (botão direito, E ou Mirar); atirar é separado (clique esquerdo na mira, Q ou Atirar)
         (this.aimMouse = !1),
         (this.firstInputAt = 0),
@@ -5324,11 +5422,13 @@ var rV = class {
             e.code === `Space` && (this.state.jumpQueued = !0),
             e.code === `KeyE` && ((this.aimMouse = !1), this.toggleAim()),
             e.code === `KeyQ` && this.state.aim && (this.state.shootQueued = !0),
+            e.code === `KeyV` && (this.state.jellyQueued = !0),
             r[e.code]?.()));
       }),
         addEventListener(`keyup`, (e) => this.keys.delete(e.code)),
         addEventListener(`blur`, () => this.keys.clear()));
-      let a = null;
+      let a = null,
+        r2 = null;
       (e.addEventListener(`pointerdown`, (t) => {
         (i(),
           this.enabled &&
@@ -5338,7 +5438,12 @@ var rV = class {
             t.button === 0 && this.state.aim && (this.state.shootQueued = !0),
             (this.aimMouse = !0),
             e.setPointerCapture(t.pointerId)));
+        // toque na metade dos botões (direita, ou esquerda com os botões invertidos): segundo analógico (direção do puxão do Jelly)
+        this.enabled && t.pointerType !== `mouse` && t.clientX > innerWidth / 2 !== document.body.classList.contains(`mirror`) && !r2 && ((r2 = { id: t.pointerId, x: t.clientX, y: t.clientY }), e.setPointerCapture(t.pointerId));
       }),
+        e.addEventListener(`pointermove`, (e) => {
+          r2 && e.pointerId === r2.id && this.setDir2(this.dir2R, e.clientX - r2.x, e.clientY - r2.y);
+        }),
         e.addEventListener(`contextmenu`, (e) => e.preventDefault()),
         e.addEventListener(`pointermove`, (e) => {
           a &&=
@@ -5349,8 +5454,9 @@ var rV = class {
             )),
             { x: e.clientX, y: e.clientY });
         }),
-        e.addEventListener(`pointerup`, () => (a = null)),
-        e.addEventListener(`lostpointercapture`, () => (a = null)),
+        e.addEventListener(`pointerup`, (e) => ((a = null), r2 && e.pointerId === r2.id && ((r2 = null), this.setDir2(this.dir2R, 0, 0)))),
+        e.addEventListener(`pointercancel`, (e) => r2 && e.pointerId === r2.id && ((r2 = null), this.setDir2(this.dir2R, 0, 0))),
+        e.addEventListener(`lostpointercapture`, (e) => ((a = null), r2 && e.pointerId === r2.id && ((r2 = null), this.setDir2(this.dir2R, 0, 0)))),
         e.addEventListener(
           `wheel`,
           (e) => {
@@ -5404,8 +5510,32 @@ var rV = class {
         (e.preventDefault(), i(), acc.setPointerCapture(e.pointerId), (this.touch.accel = !0), acc.classList.add(`on`));
       });
       for (let e of [`pointerup`, `pointercancel`, `lostpointercapture`]) acc.addEventListener(e, accOff);
+      // v28: botões de segurar Freio (modo do Acelerar: freia e dá ré) e Freio de mão (trava as rodas de trás, como B)
+      for (let [id, key] of [[`tBrake`, `brake`], [`tHand`, `hand`]]) {
+        let b = document.getElementById(id),
+          off = () => ((this.touch[key] = !1), b.classList.remove(`on`));
+        b.addEventListener(`pointerdown`, (e) => (e.preventDefault(), i(), b.setPointerCapture(e.pointerId), (this.touch[key] = !0), b.classList.add(`on`)));
+        for (let e of [`pointerup`, `pointercancel`, `lostpointercapture`]) b.addEventListener(e, off);
+      }
       document.getElementById(`tAim`).addEventListener(`pointerdown`, (e) => ((this.aimMouse = !1), e.preventDefault(), i(), this.toggleAim()));
       document.getElementById(`tShoot`).addEventListener(`pointerdown`, (e) => (e.preventDefault(), i(), this.state.aim && (this.state.shootQueued = !0)));
+      // botão Jelly: tocar puxa para a frente da câmera; arrastar a partir dele escolhe a direção; segurar estica e pega na linha
+      let jb = document.getElementById(`tJelly`), js = null,
+        jOff = (e) => {
+          js && e.pointerId === js.id && ((js = null), (this.touch.jelly = !1), jb.classList.remove(`on`), (jb.firstElementChild.style.transform = ``),
+            // a direção fica guardada um instante (o puxão ainda pode estar esticando) e depois volta ao neutro
+            setTimeout(() => js || this.setDir2(this.dir2B, 0, 0), 300));
+        };
+      jb.addEventListener(`pointerdown`, (e) => {
+        (e.preventDefault(), i(), jb.setPointerCapture(e.pointerId), (js = { id: e.pointerId, x: e.clientX, y: e.clientY }));
+        (this.setDir2(this.dir2B, 0, 0), (this.touch.jelly = !0), (this.state.jellyQueued = !0), jb.classList.add(`on`));
+      });
+      jb.addEventListener(`pointermove`, (e) => {
+        if (!js || e.pointerId !== js.id) return;
+        let d = this.setDir2(this.dir2B, e.clientX - js.x, e.clientY - js.y);
+        jb.firstElementChild.style.transform = `translate(${d.x * 22}px, ${-d.y * 22}px)`;
+      });
+      for (let e of [`pointerup`, `pointercancel`, `lostpointercapture`]) jb.addEventListener(e, jOff);
       let d = document.getElementById(`tBoost`);
       d.addEventListener(`pointerdown`, (e) => {
         (e.preventDefault(), (this.touch.boost = !0), d.classList.add(`on`));
@@ -5415,6 +5545,12 @@ var rV = class {
       };
       for (let e of [`pointerup`, `pointercancel`, `pointerleave`])
         d.addEventListener(e, f);
+    }
+    // arrasto em px → direção com zona morta, limitada a 1 (y da tela para baixo vira y para cima)
+    setDir2(o, dx, dy) {
+      let R = 55, x = dx / R, y = -dy / R, l = Math.hypot(x, y);
+      (l > 1 && ((x /= l), (y /= l)), l < 0.25 && (x = y = 0));
+      return ((o.x = x), (o.y = y), o);
     }
     // liga/desliga a mira; o botão Atirar só aparece com ela ligada
     toggleAim() {
@@ -5438,7 +5574,13 @@ var rV = class {
         )),
         (t.boost =
           e.has(`ShiftLeft`) || e.has(`ShiftRight`) || this.touch.boost),
-        (t.handbrake = e.has(`KeyB`) || e.has(`ControlLeft`)),
+        (t.handbrake = e.has(`KeyB`) || e.has(`ControlLeft`) || !!this.touch.hand),
+        // Jelly (v25): V segura; no teclado a direção do puxão é a das setas/WASD em relação à câmera (L já abre o editor)
+        (t.jellyDown = e.has(`KeyV`) || this.touch.jelly),
+        (this.dir2T = this.dir2B.x || this.dir2B.y ? this.dir2B : this.dir2R),
+        (t.dir2.x = n((e.has(`KeyD`) || e.has(`ArrowRight`) ? 1 : 0) - (e.has(`KeyA`) || e.has(`ArrowLeft`) ? 1 : 0) + this.dir2T.x)),
+        (t.dir2.y = n((e.has(`KeyW`) || e.has(`ArrowUp`) ? 1 : 0) - (e.has(`KeyS`) || e.has(`ArrowDown`) ? 1 : 0) + this.dir2T.y)),
+        this.enabled || ((t.jellyQueued = !1), (t.jellyDown = !1)),
         this.enabled || (t.aim && this.toggleAim()),
         t
       );
@@ -5470,6 +5612,14 @@ function iV({
         m = () => {
           ((f.value = e[n]), (p.textContent = Number(e[n]).toFixed(s(u))));
         };
+      // v28: no toque, se o dedo que caiu no slider acabar rolando o painel (o navegador cancela o toque), o valor volta ao de antes
+      let f0 = null;
+      (f.addEventListener(`pointerdown`, (e2) => e2.pointerType !== `mouse` && (f0 = e[n])),
+        f.addEventListener(`pointerup`, () => (f0 = null)),
+        f.addEventListener(`pointercancel`, () => {
+          f0 !== null && f0 !== e[n] && ((e[n] = f0), m(), t());
+          f0 = null;
+        }));
       (f.addEventListener(`input`, () => {
         ((e[n] = parseFloat(f.value)),
           (p.textContent = e[n].toFixed(s(u))),
@@ -5494,7 +5644,7 @@ function iV({
     ((op.value = k), (op.textContent = p.name), sel.appendChild(op));
   });
   let syncOpts = () => {
-    ((sel.value = e.profile), (selC.value = e.controlScheme), (a(`chkSafety`).checked = !!e.safety), (a(`tAccel`).hidden = e.controlScheme !== 1));
+    ((sel.value = e.profile), (selC.value = e.controlScheme), (a(`chkSafety`).checked = !!e.safety), (a(`tAccel`).hidden = a(`tBrake`).hidden = e.controlScheme !== 1), a(`tbtns`).classList.toggle(`acc`, e.controlScheme === 1));
   };
   (syncOpts(),
     sel.addEventListener(`change`, () => {
@@ -5507,6 +5657,7 @@ function iV({
     u = (e) => {
       let t = e ?? !l.classList.contains(`open`);
       (l.classList.toggle(`open`, t),
+        document.body.classList.toggle(`panel-open`, t),
         a(`btnPanel`).setAttribute(`aria-expanded`, t),
         t
           ? l.querySelector(`input`)?.focus({ preventScroll: !0 })
@@ -5515,6 +5666,8 @@ function iV({
   return (
     a(`btnPanel`).addEventListener(`click`, () => u()),
     a(`btnClose`).addEventListener(`click`, () => u(!1)),
+    // v28: no toque, tocar no jogo fora do painel também fecha
+    a(`view`).addEventListener(`pointerdown`, (e2) => e2.pointerType !== `mouse` && l.classList.contains(`open`) && u(!1)),
     a(`btnReset`).addEventListener(`click`, () => {
       (i(), a(`view`).focus());
     }),
@@ -5766,6 +5919,191 @@ var JPOW = {
   },
 };
 
+// ==== 88_pull.js ====
+// Jelly: puxão, pegar na linha e peso (v25). Proposta: docs/propostas/jelly_puxao_peneira_peso.md
+// Um botão (V no teclado, "Jelly" no toque), no estilo do pulo com o boné do Mario Odyssey:
+// tocar = o Jelly estica até o alcance numa direção horizontal (segundo analógico: setas/WASD no teclado, arrasto na metade direita
+// ou a partir do botão; neutro = frente da câmera), gruda por um instante e puxa o carrinho até lá;
+// segurar = fica esticado e pega todos os coletáveis na faixa; soltar = puxa.
+// O puxão soma à velocidade (não substitui) e perde força no fim; no ar segura a queda só enquanto dura.
+// No ar: puxões limitados por pulo, e lançar de novo perto do fim de um puxão encadeia um combo (até 3, cada elo mais longo).
+// v27: o puxão no ar termina com um quique para cima (pullBounce, pullBounceMax por pulo), como o pulo em cima do boné.
+// No chão: sem combo, recarga curta. Peso: cada item no cesto soma à massa do Jelly (yV.jm()) e encurta o puxão;
+// entregar na frente do supermercado (jc_loja) esvazia o cesto. Valores no grupo "Jelly: puxão e peso" do painel.
+var JPULL = {
+  st: null,
+  airUsed: 0,
+  bounces: 0,
+  combo: 0,
+  lastEnd: -9,
+  lastAir: !1,
+  cool: 0,
+  store: null,
+  storeT: 0,
+  init() {
+    let mk = (geo, mat) => {
+      let m = new zi(geo, mat);
+      return ((m.visible = !1), (m.castShadow = !1), lV.add(m), m);
+    };
+    ((this.tube = mk(new Wa(0.09, 0.16, 1, 8), bV.jellyBody.material)),
+      (this.tip = mk(new Ja(0.24, 12, 10), bV.jellyBody.material)),
+      // faixa de entrega na frente do supermercado (aparece com itens no cesto)
+      (this.zone = mk(new qa(1, 1).rotateX(-Math.PI / 2), new My({ color: 0x2e9d6a, transparent: !0, opacity: 0.35, depthWrite: !1 }))),
+      (this.btn = aV(`tJelly`)),
+      yV.on(`respawn`, () => this.reset()));
+  },
+  reset() {
+    ((this.steadyT = 0), (yV.jellyNoTorque = !1), (this.st = null), (this.airUsed = this.combo = this.bounces = 0), (this.cool = 0), (this.lastEnd = -9), (this.lastAir = !1));
+  },
+  // direção horizontal do puxão: segundo analógico relativo à câmera (como o esquema "analógico segue a câmera")
+  dirOf(inp) {
+    let yaw = xV.orbit.yaw, sx = inp.dir2.x, sy = inp.dir2.y;
+    if (Math.hypot(sx, sy) < 0.3) return new T(-Math.cos(yaw), 0, -Math.sin(yaw));
+    return new T(-Math.cos(yaw) * sy + Math.sin(yaw) * sx, 0, -Math.sin(yaw) * sy - Math.cos(yaw) * sx).normalize();
+  },
+  // alcance: o do Jelly vazio, mais o combo, menos o peso (o peso só encurta)
+  range(combo) {
+    let c = oV;
+    return c.pullRange * (1 + c.pullComboGain * (combo - 1)) * Math.max(0.25, 1 - c.pullWeight * yV.cargoMass());
+  },
+  inWindow(now) {
+    let s = this.st;
+    return (s && s.ph === `pull` && s.dur - s.t <= oV.pullComboWin) || (!s && now - this.lastEnd <= oV.pullComboWin);
+  },
+  can(now, air) {
+    if (oV.jellyMass <= 0) return !1;
+    let s = this.st, busy = s && s.ph !== `back`;
+    if (!air) return !busy && now >= this.cool;
+    return this.airUsed < oV.pullAirMax && (!busy || (s.ph === `pull` && s.dur - s.t <= oV.pullComboWin));
+  },
+  start(now, air, inp) {
+    if (!this.can(now, air)) return void CV.tone(180, 140, 0.06, `square`, 0.05);
+    let chain = air && this.lastAir && this.inWindow(now) || (air && this.lastAir && this.st && this.st.ph === `back` && now - this.lastEnd <= oV.pullComboWin);
+    ((this.combo = air ? (chain ? Math.min(3, this.combo + 1) : 1) : 1), air && this.airUsed++, (this.lastAir = air));
+    this.st = { ph: `out`, t: 0, k: 0, dir: this.dirOf(inp), R: this.range(this.combo), tip: new T(), air, combo: this.combo, dur: oV.pullDur };
+    (bV.kickSquash(0.25, 6), CV.tone(260 + 90 * this.combo, 640 + 160 * this.combo, 0.09, `sawtooth`, 0.13));
+    try { navigator.vibrate && navigator.vibrate(12); } catch {}
+  },
+  // passo fixo da física: roda depois de yV.preStep (que já aplicou rodas e empurrão) e antes do mundo andar
+  step(e, inp) {
+    let a = yV.state, now = a.simTime, air = a.contacts < 2, r = yV.body, c = oV;
+    (!air && !(this.st && this.st.ph !== `back`) && ((this.airUsed = 0), (this.combo = 0), (this.bounces = 0), (this.lastAir = !1)));
+    inp.jellyQueued && ((inp.jellyQueued = !1), this.start(now, air, inp));
+    let s = this.st;
+    if (!s) return this.steady(e, qz(r.rotation()), air);
+    let q = qz(r.rotation()), jp = JELLY_ANCHOR.clone().applyQuaternion(q).add(Kz(r.translation())), lv = Kz(r.linvel()), hold = !1;
+    s.t += e;
+    if (s.ph === `out` || s.ph === `hold`) {
+      // a direção acompanha o analógico enquanto o Jelly estica ou fica esticado
+      Math.hypot(inp.dir2.x, inp.dir2.y) >= 0.3 && s.dir.lerp(this.dirOf(inp), Math.min(1, e * 20)).setY(0).normalize();
+      ((s.k = Math.min(1, s.k + e / c.pullExtend)), s.tip.copy(jp).addScaledVector(s.dir, s.R * s.k));
+      s.ph === `out` && ((hold = !0), s.k >= 1 && ((s.ph = inp.jellyDown ? `hold` : `stick`), (s.t = 0)));
+      s.ph === `hold` && !inp.jellyDown && ((s.ph = `stick`), (s.t = 0));
+    } else if (s.ph === `stick`) {
+      hold = !0;
+      if (s.t >= c.pullStick) {
+        // começa a puxar: velocidade extra que, somada à que o carrinho já tem, leva ele até a ponta e perde força no fim
+        let dist = Math.max(0, s.tip.clone().sub(jp).dot(s.dir));
+        ((s.ph = `pull`), (s.t = 0), (s.dur = c.pullDur), (s.base = lv.dot(s.dir)), (s.added = 0), (s.slow = 0),
+          (s.peak = (c.pullForce * dist) / (c.pullDur * (c.pullKeep + (1 - c.pullKeep) / 2))));
+        (bV.kickSquash(0.35, 7), xV.addTrauma(0.06), CV.tone(700, 260, 0.12, `triangle`, 0.18));
+      }
+    } else if (s.ph === `pull`) {
+      hold = !0;
+      // s.added: quanto o puxão já somou; na queda da curva ele tira só o que ele mesmo pôs (a velocidade própria fica)
+      let k = Math.min(1, s.t / s.dur), u = s.peak * (c.pullKeep + (1 - c.pullKeep) * (1 - k)), want = s.base + u, al = lv.dot(s.dir), dv = want - al;
+      dv < 0 && (dv = Math.max(dv, -Math.max(0, s.added - u)));
+      (lv.addScaledVector(s.dir, dv), (s.added += dv));
+      // o Jelly puxa o carrinho pelo cesto: ele vira para a direção do puxão (de frente ou de ré, o que estiver mais perto),
+      // senão a velocidade de lado que sobra no fim faria as rodas fixas rodopiarem o carrinho
+      if (c.pullAlign > 0) {
+        let f = new T(1, 0, 0).applyQuaternion(q), err = wrapAngle(Math.atan2(-s.dir.z, s.dir.x) - Math.atan2(-f.z, f.x)), av = r.angvel();
+        Math.abs(err) > Math.PI / 2 && (err = wrapAngle(err + Math.PI));
+        r.setAngvel({ x: av.x, y: rn.clamp(err * 12 * c.pullAlign, -9, 9), z: av.z }, !0);
+      }
+      // bateu em algo (parede): para de puxar em vez de empurrar contra ela
+      al < 0.3 * want ? (s.slow += e) : (s.slow = 0);
+      if (s.slow > 0.08 || k >= 1) {
+        this.end(now, s);
+        // v27: no ar o puxão termina com um quique para cima, como o pulo em cima do boné no Odyssey
+        // (pullBounceMax por pulo; o peso encurta o quique como encurta o puxão)
+        if (k >= 1 && air && c.pullBounce > 0 && this.bounces < c.pullBounceMax) {
+          (this.bounces++, (lv.y = Math.max(lv.y, c.pullBounce * Math.max(0.25, 1 - c.pullWeight * yV.cargoMass()))));
+          (bV.kickSquash(0.4, 8), CV.tone(420, 1100, 0.14, `triangle`, 0.2));
+          try { navigator.vibrate && navigator.vibrate(10); } catch {}
+        }
+      }
+    } else if (s.ph === `back`) (s.t >= 0.12 && (this.st = null));
+    // no ar o puxão segura a queda enquanto dura (esticar, grudar e puxar; segurar o botão não segura)
+    hold && air && lv.y < 0 && (lv.y = 0);
+    (hold || s.ph === `pull`) && r.setLinvel(lv, !0);
+    // o tranco do puxão sacode o Jelly, e a mola dele (presa acima do centro de massa) capotava o carrinho no ar:
+    // enquanto puxa e um pouco depois, o empurrão do Jelly vai no centro de massa e o carrinho fica de pé
+    (hold || s.ph === `pull`) && (this.steadyT = c.pullSteadyAfter);
+    this.steady(e, q, air);
+  },
+  steady(e, q, air) {
+    let c = oV, r = yV.body, on2 = this.steadyT > 0 && c.pullSteady > 0;
+    yV.jellyNoTorque = on2;
+    if (!on2) return;
+    this.steadyT -= e;
+    let av = Kz(r.angvel()), wy = av.y, up = Gz.clone().applyQuaternion(q), fix = up.clone().cross(Gz);
+    // tira o giro de capotar (fica só o giro em volta do eixo vertical) e, no ar, endireita aos poucos
+    (av.setY(0).multiplyScalar(Math.max(0, 1 - e * 25 * c.pullSteady)), air && av.addScaledVector(fix, 30 * c.pullSteady * e), av.setY(wy));
+    r.setAngvel(av, !0);
+  },
+  end(now, s) {
+    ((s.ph = `back`), (s.t = 0), (s.from = s.tip.clone()), (this.lastEnd = now), s.air || (this.cool = now + oV.pullCool));
+  },
+  // quadro de desenho: tentáculo, pegar na linha, entrega no mercado, botão e peso
+  frame(dt, inp) {
+    this.tube || this.init();
+    yV.cargo = HELD.length;
+    let s = this.st, jp = JPOW.jellyPos(), tip = null;
+    if (s) {
+      tip = s.ph === `back` ? s.from.clone().lerp(jp, Math.min(1, s.t / 0.12)) : s.tip;
+      // segurando: pega tudo que está na faixa do Jelly esticado
+      if (s.ph === `hold`) {
+        let w = oV.pullWidth / 2, ax = s.tip.x - jp.x, az = s.tip.z - jp.z, L2 = ax * ax + az * az || 1;
+        for (let it of hV.items) {
+          if (!JPOW.live(it)) continue;
+          let p = it.body.translation(), u = rn.clamp(((p.x - jp.x) * ax + (p.z - jp.z) * az) / L2, 0, 1),
+            dx = p.x - (jp.x + ax * u), dz = p.z - (jp.z + az * u);
+          dx * dx + dz * dz <= w * w && Math.abs(p.y - jp.y) < 1.8 && grabItem(it, 0.3);
+        }
+      }
+    }
+    let d = tip && tip.clone().sub(jp), len = d ? d.length() : 0;
+    ((this.tube.visible = this.tip.visible = len > 0.05),
+      len > 0.05 &&
+        (this.tube.position.copy(jp).addScaledVector(d, 0.5),
+          this.tube.quaternion.setFromUnitVectors(new T(0, 1, 0), d.clone().normalize()),
+          this.tube.scale.set(1, len, 1),
+          this.tip.position.copy(tip)));
+    this.deliver(dt);
+    let a = yV.state;
+    this.btn && this.btn.classList.toggle(`off`, !this.can(a.simTime, a.contacts < 2));
+  },
+  // entrega: faixa de 7 m na frente do supermercado (lado da placa, +z da peça); esvazia o cesto
+  deliver(dt) {
+    if ((this.storeT -= dt) <= 0) ((this.storeT = 1), (this.store = LEVEL.pecas.find((p) => p.m === `jc_loja`) || null));
+    let p = this.store, on2 = !!p && HELD.length > 0;
+    if ((this.zone.visible = on2), !on2) return;
+    let o = PIECES.obb(p), cs = Math.cos(o.yaw), sn = Math.sin(o.yaw), D = 7;
+    (this.zone.position.set(o.c.x + (o.h.z + D / 2) * sn, 0.06, o.c.z + (o.h.z + D / 2) * cs), (this.zone.rotation.y = o.yaw), this.zone.scale.set(o.h.x * 2, 1, D));
+    let cp = yV.body.translation(), wx = cp.x - o.c.x, wz = cp.z - o.c.z, lx = wx * cs - wz * sn, lz = wx * sn + wz * cs;
+    if (Math.abs(lx) < o.h.x && lz > o.h.z - 1 && lz < o.h.z + D && cp.y < o.c.y + o.h.y) {
+      let n = HELD.length;
+      (HELD.forEach((h) => h.removeFromParent()), (HELD.length = 0), (yV.cargo = 0));
+      (JPOW.toast(`Entregou ` + n + (n > 1 ? ` itens` : ` item`) + `: o Jelly ficou leve`), CV.tone(500, 1200, 0.3, `triangle`, 0.25));
+    }
+  },
+  hud() {
+    let s = this.st, kg = yV.cargoMass() * 10;
+    return (s && s.combo > 1 && s.ph !== `back` ? ` · combo ×` + s.combo : ``) + (kg > 0 ? ` · peso +` + Math.round(kg) + ` kg` : ``);
+  },
+};
+
 // ==== 90_main.js ====
 var aV = (e) => document.getElementById(e),
   oV = gz(),
@@ -5883,6 +6221,9 @@ function regrass() {
   fill(`selShadow`, PERF_SHADOW.map((n, k) => [k, n]), oV.shadowQ, (v) => ((oV.shadowQ = v), _z(oV), location.reload()));
   let cf = aV(`chkFps`), showF = () => (aV(`fps`).style.display = oV.showFps ? `` : `none`);
   ((cf.checked = !!oV.showFps), showF(), cf.addEventListener(`change`, () => ((oV.showFps = cf.checked ? 1 : 0), _z(oV), showF())));
+  // v28: botões do toque (e painel, topo, velocidade) do outro lado da tela
+  let cm = aV(`chkMirror`), mir = () => document.body.classList.toggle(`mirror`, !!oV.mirrorBtns);
+  ((cm.checked = !!oV.mirrorBtns), mir(), cm.addEventListener(`change`, () => ((oV.mirrorBtns = cm.checked ? 1 : 0), _z(oV), mir())));
   let aa = aV(`chkAA`);
   ((aa.checked = !!oV.antialias), aa.addEventListener(`change`, () => ((oV.antialias = aa.checked ? 1 : 0), _z(oV), location.reload())));
 }
@@ -5998,7 +6339,7 @@ function mapControls(n) {
     // botão de acelerar separado; o analógico só dá direção, e puxar para baixo freia/dá ré
     let brake = sy < -0.35;
     ((n.steer = -sx),
-      (n.throttle = brake ? Math.min(-0.5, sy) : OV.touch.accel || ky > 0 ? 1 : 0));
+      (n.throttle = OV.touch.brake ? -1 : brake ? Math.min(-0.5, sy) : OV.touch.accel || ky > 0 ? 1 : 0));
   }
   return n;
 }
@@ -6068,7 +6409,7 @@ function grabItem(it, dur = 0.35) {
   return c;
 }
 function kV() {
-  (HELD.forEach((c) => c.removeFromParent()), (HELD.length = 0), JPOW.reset());
+  (HELD.forEach((c) => c.removeFromParent()), (HELD.length = 0), JPOW.reset(), JPULL.reset());
   (hV.reset(), CV.unlock(), CV.tone(500, 900, 0.15, `triangle`, 0.15));
 }
 var AV = iV({
@@ -6122,6 +6463,7 @@ function NV() {
   let p0 = performance.now(),
     r = pV.update(t, (e) => {
       (yV.preStep(e, n),
+        JPULL.step(e, n),
         fV.step(mV),
         yV.postStep(e),
         hV.snapshot(),
@@ -6150,6 +6492,7 @@ function NV() {
     GRASS.forEach((g) => (g.uCar.value.copy(bV.root.position), g.update(uV.position))),
     collectCones(t),
     JPOW.frame(t, n),
+    JPULL.frame(t, n),
     gV.update(t, oV.grassRecovery),
     SV.update(t),
     CV.updateEngine(Math.abs(i.speed), Math.abs(n.throttle), i.boosting, i.surface.g < 0.5 ? 0.3 : i.surface.r > 2 ? 0.6 : 1),
@@ -6158,7 +6501,7 @@ function NV() {
     (aV(`speedNum`).textContent = Math.round(Math.abs(i.speed) * 3.6)),
     aV(`speed`).classList.toggle(`boost`, i.boosting),
     (aV(`profileName`).textContent =
-      yV.profile.name + JPOW.hud() + (HELD.length ? ` · itens: ` + HELD.length : ``) + (i.surface !== SURF0 ? ` · piso: ` + i.surface.name : ``) + (i.locked ? (yV.profile.rearCaster ? ` · rodízios de trás travados` : ` · rodas de trás travadas`) : ``)),
+      yV.profile.name + JPOW.hud() + JPULL.hud() + (HELD.length ? ` · itens: ` + HELD.length : ``) + (i.surface !== SURF0 ? ` · piso: ` + i.surface.name : ``) + (i.locked ? (yV.profile.rearCaster ? ` · rodízios de trás travados` : ` · rodas de trás travadas`) : ``)),
     OV.firstInputAt &&
       e - OV.firstInputAt > 9e3 &&
       aV(`hint`).classList.add(`gone`),
@@ -6225,7 +6568,7 @@ function PV() {
   (aV(`chkCutout`).checked = !!oV.cutout),
   aV(`chkCutout`).addEventListener(`change`, (e) => ((oV.cutout = e.target.checked ? 1 : 0), _z(oV))),
   aV(`view`).focus(),
-  (window.__lab = { renderer: cV, cart: yV, cfg: oV, input: OV, world: fV, camera: uV, cam: xV, mapControls, WORLD, HELD, JPOW, vis: bV, items: hV, PIECES, EDITOR, SURFACES, LEVEL: () => LEVEL }));
+  (window.__lab = { renderer: cV, cart: yV, cfg: oV, input: OV, world: fV, camera: uV, cam: xV, mapControls, WORLD, HELD, JPOW, JPULL, vis: bV, items: hV, PIECES, EDITOR, SURFACES, LEVEL: () => LEVEL }));
 
 // ==== 95_editor.js ====
 // Editor de nível (etapa 1): câmera livre, lista de modelos, colocar, mover, girar, escalar, duplicar e apagar peças
