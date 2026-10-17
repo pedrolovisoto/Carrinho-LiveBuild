@@ -9,6 +9,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
   <style>:root{--ink:#1f2540;--ink-soft:#4a5275;--paper:#f7f8fb;--panel:#f7f8fbf0;--line:#1f254024;--accent:#f2b134;--accent-ink:#1f2540;--sky:#b9d4e3;--font:"Chakra Petch", "Segoe UI", system-ui, -apple-system, sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--ink:#eef0f8;--ink-soft:#aab1cf;--paper:#161a2b;--panel:#161a2bf0;--line:#eef0f824}}:root[data-theme=dark]{--ink:#eef0f8;--ink-soft:#aab1cf;--paper:#161a2b;--panel:#161a2bf0;--line:#eef0f824}*,:before,:after{box-sizing:inherit}html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}body{background:var(--sky);height:100%;font-family:var(--font);color:var(--ink);-webkit-user-select:none;user-select:none;touch-action:none;margin:0;overflow:hidden}canvas#view{outline:none;width:100%;height:100%;display:block;position:fixed;inset:0}.speed{left:20px;bottom:calc(18px + env(safe-area-inset-bottom,0px));color:#1f2540;pointer-events:none;line-height:.9;position:fixed}.speed b{font-variant-numeric:tabular-nums;letter-spacing:-.02em;font-size:clamp(44px,8vw,72px);font-weight:700;display:block}.speed span{opacity:.7;font-size:15px;font-weight:600}.speed.boost b{color:#c6461f}.topbar{top:calc(14px + env(safe-area-inset-top,0px));gap:8px;display:flex;position:fixed;right:14px}button{font:inherit;cursor:pointer}.btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:9px;padding:9px 14px;font-size:15px;font-weight:600}.btn:hover{border-color:var(--ink-soft)}.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:#0000}:focus-visible{outline:3px solid var(--accent);outline-offset:2px}.hint{left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:12px;max-width:min(560px,100% - 200px);padding:12px 16px;font-size:14px;line-height:1.6;transition:opacity .6s;position:fixed;transform:translate(-50%)}.hint.gone{opacity:0;pointer-events:none}.hint kbd{font:inherit;border:1px solid var(--line);background:var(--paper);border-radius:5px;padding:1px 6px;font-weight:600}@media (max-width:720px){.hint{display:none}}.panel{background:var(--panel);border-left:1px solid var(--line);width:min(360px,100%);height:100%;padding:calc(16px + env(safe-area-inset-top,0px)) 18px calc(18px + env(safe-area-inset-bottom,0px));-webkit-user-select:text;user-select:text;touch-action:pan-y;transition:transform .28s cubic-bezier(.2,.8,.2,1);position:fixed;top:0;right:0;overflow-y:auto;transform:translate(105%)}.panel.open{transform:none}.panel header{justify-content:space-between;align-items:center;margin-bottom:6px;display:flex}.panel h2{margin:0;font-size:22px;font-weight:700}.panel code{font-size:13px}.panel p.lead{color:var(--ink-soft);margin:0 0 14px;font-size:14px;line-height:1.5}.panel h3{border-top:1px solid var(--line);margin:20px 0 6px;padding-top:14px;font-size:16px;font-weight:700}.row{grid-template-columns:1fr auto;align-items:center;gap:2px 10px;margin:9px 0;display:grid}.row label{font-size:14px;font-weight:500}.row output{font-variant-numeric:tabular-nums;color:var(--ink-soft);font-size:13px}.row input[type=range]{accent-color:#d9952a;grid-column:1/-1;width:100%}.check{align-items:center;gap:8px;margin:10px 0;font-size:14px;display:flex}.actions{flex-wrap:wrap;gap:8px;margin-top:18px;display:flex}textarea.dump{background:var(--paper);width:100%;height:160px;color:var(--ink);border:1px solid var(--line);border-radius:8px;margin-top:10px;padding:8px;font:12px/1.4 ui-monospace,Menlo,Consolas,monospace}@media (prefers-reduced-motion:reduce){.panel,.hint{transition:none}}.touch{display:none}@media (pointer:coarse){.touch{display:block}}.stick{left:calc(24px + env(safe-area-inset-left,0px));bottom:calc(110px + env(safe-area-inset-bottom,0px));background:#1f25402e;border:2px solid #ffffff80;border-radius:50%;width:130px;height:130px;position:fixed}.stick i{background:#ffffffd9;border-radius:50%;width:56px;height:56px;margin:-28px 0 0 -28px;position:absolute;top:50%;left:50%}.tbtns{right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(28px + env(safe-area-inset-bottom,0px));flex-direction:column;gap:12px;display:flex;position:fixed}.tbtns button{color:#fff;background:#1f25408c;border:2px solid #fff9;border-radius:50%;width:76px;height:76px;font-size:14px;font-weight:700}.tbtns button.on{background:var(--accent);color:var(--accent-ink)}.overlay{background:var(--sky);z-index:10;text-align:center;place-items:center;padding:24px;display:grid;position:fixed;inset:0}.overlay div{color:#1f2540;max-width:440px;font-size:17px;line-height:1.5}.overlay.hidden{display:none}
 .speed .prof{display:block;font-style:normal;font-size:13px;font-weight:600;opacity:.75;margin-top:6px;max-width:60vw}.check.sel select{font:inherit;margin-left:8px;max-width:220px}@media (pointer:coarse){.hint{display:none}.speed{top:calc(12px + env(safe-area-inset-top,0px));bottom:auto;left:calc(16px + env(safe-area-inset-left,0px))}.speed b{font-size:40px}.stick{bottom:calc(24px + env(safe-area-inset-bottom,0px));width:150px;height:150px}.tbtns button.big{width:104px;height:104px;font-size:16px}}.lap{left:50%;top:calc(14px + env(safe-area-inset-top,0px));transform:translate(-50%);background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:8px 18px;text-align:center;pointer-events:none;position:fixed;line-height:1.15}.lap[hidden]{display:none}.lap b{font-variant-numeric:tabular-nums;font-size:30px;font-weight:700;display:block}.lap em{font-style:normal;color:#c6461f;font-weight:700;font-size:14px;display:block}.lap span{font-size:13px;font-weight:600;opacity:.75}.ed[hidden],.ed [hidden]{display:none!important}body.editing .topbar,body.editing .speed,body.editing .lap,body.editing .hint,body.editing .touch,body.editing .panel{display:none!important}.ed-bar{top:calc(14px + env(safe-area-inset-top,0px));right:14px;gap:8px;display:flex;position:fixed;flex-wrap:wrap;justify-content:flex-end}.ed-bar .btn:disabled{opacity:.45;cursor:default}.ed-lib,.ed-file{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;position:fixed;overflow-y:auto;touch-action:pan-y;-webkit-user-select:none;user-select:none}.ed-lib{left:14px;top:calc(14px + env(safe-area-inset-top,0px));width:290px;max-height:calc(100% - 130px)}.ed-file{right:14px;top:calc(66px + env(safe-area-inset-top,0px));width:300px;max-height:calc(100% - 180px)}.ed-file h3{margin:0 0 4px;font-size:17px}.ed-file p{margin:0 0 10px;font-size:13px;line-height:1.45;color:var(--ink-soft)}.ed-file .actions{margin-top:8px}.ed-file textarea{background:var(--paper);width:100%;height:120px;color:var(--ink);border:1px solid var(--line);border-radius:8px;margin-top:8px;padding:8px;font:12px/1.4 ui-monospace,Menlo,Consolas,monospace;-webkit-user-select:text;user-select:text}.ed-lib input[type=search]{font:inherit;width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}.ed-tabs{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0}.ed-tabs button,.ed-list button,.ed-tools button{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:8px;font-weight:600}.ed-tabs button{padding:5px 9px;font-size:13px}.ed-tabs button.on{background:var(--accent);color:var(--accent-ink);border-color:#0000}.ed-list{display:grid;grid-template-columns:1fr 1fr;gap:6px}.ed-list button{padding:9px 6px;font-size:13px;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ed-list button:active,.ed-tools button:active{background:var(--accent)}.ed-sel{left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translate(-50%);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;position:fixed;max-width:calc(100% - 24px)}.ed-name{font-weight:700;font-size:14px;margin-bottom:8px}.ed-tools{display:flex;flex-wrap:wrap;gap:6px}.ed-tools button{min-width:44px;height:44px;padding:0 10px;font-size:18px}.ed-tools button.txt{font-size:14px}.ed-tools button.danger{color:#c6461f}.ed-flags{display:flex;gap:16px;margin-top:8px;font-size:14px}.ed-flags label{display:flex;gap:6px;align-items:center}.ed-flags select,.ed-nums input{font:inherit;font-size:14px;border:1px solid var(--line);border-radius:7px;background:var(--paper);color:var(--ink);padding:5px 6px}.ed-modes{display:flex;gap:4px;margin-bottom:8px}.ed-modes button{flex:1;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:8px;padding:7px 8px;font-weight:600;font-size:14px}.ed-modes button.on{background:var(--accent);color:var(--accent-ink);border-color:#0000}.ed-nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-bottom:8px}.ed-nums label{display:flex;flex-direction:column;font-size:12px;font-weight:600;color:var(--ink-soft);gap:2px}.ed-nums input{width:100%;min-width:0;-webkit-user-select:text;user-select:text}.ed-list button{display:flex;align-items:center;gap:6px}.ed-list img{width:40px;height:40px;flex:none;object-fit:contain}.ed-list img:not([src]){visibility:hidden}.ed-list span{overflow:hidden;text-overflow:ellipsis}.ed-toast{left:50%;top:calc(70px + env(safe-area-inset-top,0px));transform:translate(-50%);background:var(--ink);color:var(--paper);border-radius:10px;padding:8px 14px;font-size:14px;font-weight:600;position:fixed;pointer-events:none;max-width:calc(100% - 32px)}.ed-help{left:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));max-width:300px;font-size:12px;line-height:1.45;color:#1f2540cc;position:fixed;pointer-events:none}.ed-help kbd{font:inherit;font-weight:700}.ed-sel:not([hidden])~.ed-help{display:none}@media (max-width:720px),(pointer:coarse){.ed-lib{left:0;right:0;top:auto;bottom:0;width:auto;max-height:46vh;border-radius:14px 14px 0 0;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px))}.ed-file{left:12px;right:12px;width:auto}.ed-help{display:none}.ed-bar{left:12px;right:12px}.ed-bar .btn{padding:9px 11px}.ed-sel{left:0;right:0;transform:none;max-width:none;border-radius:14px 14px 0 0;bottom:0;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px))}}
+.jp-aim{position:fixed;left:50%;top:50%;width:34px;height:34px;margin:-17px 0 0 -17px;border:3px solid #fff;border-radius:50%;box-shadow:0 0 0 2px #1f254066;pointer-events:none;transition:transform .12s}
+.jp-aim.lock{border-color:var(--accent);transform:scale(.92)}
+.jp-toast{position:fixed;left:50%;top:calc(70px + env(safe-area-inset-top,0px));transform:translate(-50%);background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:8px 14px;font-weight:700;pointer-events:none;opacity:0;transition:opacity .4s}
+.jp-toast.on{opacity:1}
+body.editing .jp-aim,body.editing .jp-toast{display:none!important}
 </style>
 </head>
 <body>
@@ -25,7 +30,7 @@
 </div>
 
 <div class="hint" id="hint">
-  <kbd>W A S D</kbd> apontam para onde o carrinho vai (troque o controle em Ajustes). <kbd>B</kbd> trava as rodas de trás, <kbd>G</kbd> troca as rodas, <kbd>Shift</kbd> turbo, <kbd>Espaço</kbd> pulo, <kbd>R</kbd> desvirar, <kbd>H</kbd> buzina, <kbd>M</kbd> som, <kbd>C</kbd> mostra as colisões, <kbd>L</kbd> abre o editor de nível, <kbd>F</kbd> tela cheia. Arraste o mouse para girar a câmera.
+  <kbd>W A S D</kbd> apontam para onde o carrinho vai (troque o controle em Ajustes). <kbd>B</kbd> trava as rodas de trás, <kbd>G</kbd> troca as rodas, <kbd>Shift</kbd> turbo, <kbd>Espaço</kbd> pulo, <kbd>R</kbd> desvirar, <kbd>H</kbd> buzina, <kbd>M</kbd> som, <kbd>C</kbd> mostra as colisões, <kbd>L</kbd> abre o editor de nível, <kbd>F</kbd> tela cheia. Arraste o mouse para girar a câmera. Botão direito (ou <kbd>E</kbd>) liga e desliga a mira da gelatina; na mira, clique (ou <kbd>Q</kbd>) para atirar.
 </div>
 
 <aside class="panel" id="panel" aria-label="Ajustes de física e sensação">
@@ -47,11 +52,15 @@
   <textarea class="dump" id="dump" hidden readonly aria-label="Configuração em JSON"></textarea>
 </aside>
 
+<div class="jp-aim" id="jpAim" hidden></div>
+<div class="jp-toast" id="jpToast"></div>
 <div class="touch">
   <div class="stick" id="stick"><i id="knob"></i></div>
   <div class="tbtns">
     <button id="tJump">Pular</button>
     <button id="tBoost">Turbo</button>
+    <button id="tShoot" hidden>Atirar</button>
+    <button id="tAim">Mirar</button>
     <button id="tAccel" class="big" hidden>Acelerar</button>
   </div>
 </div>
@@ -119,6 +128,7 @@
     <div class="ed-flags">
       <label>Colisão <select id="edCol"><option value="" id="edColDef">Padrão</option><option value="box">Caixa</option><option value="mesh">Malha do modelo</option><option value="hull">Casco convexo</option><option value="0">Nenhuma</option></select></label>
       <label><input type="checkbox" id="edCollect"> Jelly pega</label>
+      <label title="A gelatina aponta para ele (bússola)"><input type="checkbox" id="edIco"> Item icônico</label>
     </div>
   </div>
   <div class="ed-toast" id="edToast" role="status" hidden></div>
@@ -1258,6 +1268,17 @@ var dz = {
     jellyDamp: 7,
     jellyFeedback: 1,
     jellyRoom: 0.3,
+    // Gelatina: bússola e mira (v16)
+    compassLean: 0.25,
+    compassColor: 1,
+    compassNear: 4,
+    compassFar: 60,
+    aimPush: 0.3,
+    shotRange: 6,
+    aimArea: 0.12,
+    shotSpeed: 30,
+    fetchTime: 0.5,
+    aimCamSide: 0.8,
     // Suspensão
     stiffness: 55,
     compression: 2.4,
@@ -1332,6 +1353,21 @@ var dz = {
         [`jellyDamp`, `Amortecimento da gelatina`, 0.5, 30, 0.5],
         [`jellyFeedback`, `Quanto o Jelly empurra o carrinho`, 0, 1, 0.05],
         [`jellyRoom`, `Folga no cesto (m)`, 0.05, 0.6, 0.01],
+      ],
+    ],
+    [
+      `Gelatina: bússola e mira`,
+      [
+        [`compassLean`, `Bússola: quanto ela se inclina para o item icônico (m)`, 0, 0.5, 0.01],
+        [`compassColor`, `Bússola: quanto a cor muda (0 desliga)`, 0, 1, 0.05],
+        [`compassNear`, `Bússola: cor igual à do item a (m)`, 1, 30, 0.5],
+        [`compassFar`, `Bússola: começa a mudar de cor a (m)`, 10, 200, 5],
+        [`aimPush`, `Mira: força que sobra no empurrão`, 0, 1, 0.05],
+        [`shotRange`, `Tiro: alcance da gelatina (m)`, 1, 60, 0.5],
+        [`aimArea`, `Mira: tamanho do círculo (fração da tela)`, 0.02, 1, 0.01],
+        [`shotSpeed`, `Tiro: velocidade da ida (m/s)`, 5, 80, 1],
+        [`fetchTime`, `Tiro: tempo da volta com o item (s)`, 0.15, 2, 0.05],
+        [`aimCamSide`, `Mira: câmera para o lado do ombro (m)`, -2, 2, 0.1],
       ],
     ],
     [
@@ -4401,7 +4437,7 @@ var LevelPieces = class {
     let g = kitCentered(p.m, k, -h[1] * k);
     g.scale.set(p.sx || 1, p.sy || 1, p.sz || 1);
     let it = this.props.add(g, d, [p.x, (p.y || 0) + hy, p.z], p.yaw || 0);
-    coleta ? (Object.assign(it, { coleta: p.m, k }), it.body.enableCcd(!0), it.body.setAngularDamping(1.2)) : (it.solto = p.m);
+    coleta ? (Object.assign(it, { coleta: p.m, k, ico: !!p.ico }), it.body.enableCcd(!0), it.body.setAngularDamping(1.2)) : (it.solto = p.m);
     this.dyn.push(it);
   }
 };
@@ -4469,6 +4505,8 @@ var Uz = [
         (this.jelly = {
           d: new T(0, -0.1, 0),
           v: new T(),
+          // b: ponto de repouso deslocado no cesto (bússola e mira da gelatina, v16), no espaço do carrinho
+          b: new T(),
           impulse: new T(),
           hit: 0,
         }),
@@ -4739,9 +4777,9 @@ var Uz = [
         before = J.v.clone(),
         wallDv = new T();
       for (let k = 0; k < sub; k++) {
-        let ax = rel.x - mr * (K * J.d.x + C * J.v.x),
+        let ax = rel.x - mr * (K * (J.d.x - J.b.x) + C * J.v.x),
           ay = rel.y - mr * (K * J.d.y + C * J.v.y),
-          az = rel.z - mr * (K * J.d.z + C * J.v.z);
+          az = rel.z - mr * (K * (J.d.z - J.b.z) + C * J.v.z);
         (J.v.x += ax * h, J.v.y += ay * h, J.v.z += az * h);
         J.d.addScaledVector(J.v, h);
         for (let ax2 of [`x`, `y`, `z`]) {
@@ -4759,7 +4797,7 @@ var Uz = [
         }
       }
       // reação no carrinho: mola (inclui o peso do Jelly) + batidas nas paredes do cesto
-      let springF = J.d.clone().multiplyScalar(K).addScaledVector(J.v, C).multiplyScalar(c.jellyMass * e);
+      let springF = J.d.clone().sub(J.b).multiplyScalar(K).addScaledVector(J.v, C).multiplyScalar(c.jellyMass * e);
       J.impulse.copy(springF.sub(wallDv.multiplyScalar(c.jellyMass)).applyQuaternion(q));
       this.interp.snapshot();
     }
@@ -5026,8 +5064,18 @@ var eV = class {
         this.focus.z + Math.cos(c.pitch) * Math.sin(c.yaw) * u,
       ),
         s.lookAt(this.focus));
+      // Mira da gelatina (v16): câmera sobre o ombro do Abanab, olhando para onde a órbita aponta
+      this.aimK = (this.aimK || 0) + ((this.aim ? 1 : 0) - (this.aimK || 0)) * (1 - Math.exp(-9 * e));
+      if (this.aimK > 0.002) {
+        let k = this.aimK * this.aimK * (3 - 2 * this.aimK),
+          f = new T(-Math.cos(c.yaw), 0, -Math.sin(c.yaw)),
+          rt = new T(-f.z, 0, f.x),
+          sp = t.clone().addScaledVector(f, -3.4).addScaledVector(rt, a.aimCamSide).setY(t.y + 2.6),
+          lk = t.clone().addScaledVector(f, 10).addScaledVector(rt, a.aimCamSide * 0.5).setY(t.y - 0.6 + (0.78 - c.pitch) * 4);
+        (s.position.lerp(sp, k), s.lookAt(this.focus.clone().lerp(lk, k)));
+      }
       let d =
-        35 +
+        (this.aim ? 30 : 35) +
         rn.clamp(Math.abs(r) / 30, 0, 1) * a.fovKick * 0.6 +
         (i ? a.fovKick * 0.5 : 0);
       if (
@@ -5230,8 +5278,12 @@ var rV = class {
           boost: !1,
           handbrake: !1,
           jumpQueued: !1,
+          aim: !1,
+          shootQueued: !1,
         }),
         (this.touch = { x: 0, y: 0, boost: !1, accel: !1 }),
+        // mira da gelatina (v17): modo liga/desliga (botão direito, E ou Mirar); atirar é separado (clique esquerdo na mira, Q ou Atirar)
+        (this.aimMouse = !1),
         (this.firstInputAt = 0),
         // desligado enquanto o editor de nível está aberto (ele tem teclado e ponteiro próprios)
         (this.enabled = !0));
@@ -5252,6 +5304,8 @@ var rV = class {
           !e.repeat &&
             (this.keys.add(e.code),
             e.code === `Space` && (this.state.jumpQueued = !0),
+            e.code === `KeyE` && ((this.aimMouse = !1), this.toggleAim()),
+            e.code === `KeyQ` && this.state.aim && (this.state.shootQueued = !0),
             r[e.code]?.()));
       }),
         addEventListener(`keyup`, (e) => this.keys.delete(e.code)),
@@ -5262,8 +5316,12 @@ var rV = class {
           this.enabled &&
           t.pointerType === `mouse` &&
             ((a = { x: t.clientX, y: t.clientY }),
+            t.button === 2 && this.toggleAim(),
+            t.button === 0 && this.state.aim && (this.state.shootQueued = !0),
+            (this.aimMouse = !0),
             e.setPointerCapture(t.pointerId)));
       }),
+        e.addEventListener(`contextmenu`, (e) => e.preventDefault()),
         e.addEventListener(`pointermove`, (e) => {
           a &&=
             ((t.yaw -= (e.clientX - a.x) * 0.006),
@@ -5274,6 +5332,7 @@ var rV = class {
             { x: e.clientX, y: e.clientY });
         }),
         e.addEventListener(`pointerup`, () => (a = null)),
+        e.addEventListener(`lostpointercapture`, () => (a = null)),
         e.addEventListener(
           `wheel`,
           (e) => {
@@ -5327,6 +5386,8 @@ var rV = class {
         (e.preventDefault(), i(), acc.setPointerCapture(e.pointerId), (this.touch.accel = !0), acc.classList.add(`on`));
       });
       for (let e of [`pointerup`, `pointercancel`, `lostpointercapture`]) acc.addEventListener(e, accOff);
+      document.getElementById(`tAim`).addEventListener(`pointerdown`, (e) => ((this.aimMouse = !1), e.preventDefault(), i(), this.toggleAim()));
+      document.getElementById(`tShoot`).addEventListener(`pointerdown`, (e) => (e.preventDefault(), i(), this.state.aim && (this.state.shootQueued = !0)));
       let d = document.getElementById(`tBoost`);
       d.addEventListener(`pointerdown`, (e) => {
         (e.preventDefault(), (this.touch.boost = !0), d.classList.add(`on`));
@@ -5336,6 +5397,11 @@ var rV = class {
       };
       for (let e of [`pointerup`, `pointercancel`, `pointerleave`])
         d.addEventListener(e, f);
+    }
+    // liga/desliga a mira; o botão Atirar só aparece com ela ligada
+    toggleAim() {
+      let on2 = (this.state.aim = !this.state.aim);
+      (this.state.shootQueued = !1, document.getElementById(`tAim`).classList.toggle(`on`, on2), (document.getElementById(`tShoot`).hidden = !on2));
     }
     read() {
       let e = this.keys,
@@ -5355,6 +5421,7 @@ var rV = class {
         (t.boost =
           e.has(`ShiftLeft`) || e.has(`ShiftRight`) || this.touch.boost),
         (t.handbrake = e.has(`KeyB`) || e.has(`ControlLeft`)),
+        this.enabled || (t.aim && this.toggleAim()),
         t
       );
     }
@@ -5463,6 +5530,223 @@ function iV({
     }
   );
 }
+
+// ==== 87_jelly.js ====
+// Gelatina como bússola e mira (v16). Plano: docs/propostas/gelatina_mira_mochila_frescor.md
+// Bússola: desde o começo da fase a Jelly se inclina no cesto na direção do item icônico e,
+// quanto mais perto dele, mais fica com a cor do item.
+// Mira (v17: liga e desliga): botão direito, E ou "Mirar" põe a câmera no ombro e tira força do empurrão;
+// atirar é separado (clique esquerdo na mira, Q ou "Atirar"): a gelatina que estica até o coletável marcado, pega e volta com ele para o cesto.
+// Valores no painel Ajustes, grupo "Gelatina: bússola e mira".
+// cor de cada modelo: média das cores da textura nos vértices, puxada para as partes mais saturadas
+var JP_COLORS = {},
+  JP_IMG = new Map();
+function jpColorOf(name) {
+  if (JP_COLORS[name]) return JP_COLORS[name];
+  let r = 0, g = 0, b = 0, w = 0, ready = !0, c = new lr();
+  for (let pt of kitParts(name)) {
+    let m = pt.mat, img = m.map && m.map.image, data = null;
+    if (img) {
+      if (!img.complete || !img.naturalWidth) ready = !1;
+      else {
+        data = JP_IMG.get(img);
+        if (!data) {
+          let cv = document.createElement(`canvas`);
+          ((cv.width = img.naturalWidth), (cv.height = img.naturalHeight));
+          let cx = cv.getContext(`2d`);
+          (cx.drawImage(img, 0, 0), (data = { w: cv.width, h: cv.height, px: cx.getImageData(0, 0, cv.width, cv.height).data }), JP_IMG.set(img, data));
+        }
+      }
+    }
+    let uv = pt.geo.attributes.uv, n = uv ? uv.count : 1, step = Math.max(1, Math.floor(n / 150));
+    for (let i = 0; i < n; i += step) {
+      c.copy(m.color);
+      if (data && uv) {
+        let u = uv.getX(i), v = uv.getY(i),
+          x = Math.min(data.w - 1, Math.floor((u - Math.floor(u)) * data.w)),
+          y = Math.min(data.h - 1, Math.floor((v - Math.floor(v)) * data.h)),
+          o = (y * data.w + x) * 4,
+          t = new lr().setRGB(data.px[o] / 255, data.px[o + 1] / 255, data.px[o + 2] / 255, `srgb`);
+        c.multiply(t);
+      }
+      let mx = Math.max(c.r, c.g, c.b), mn = Math.min(c.r, c.g, c.b), q = 0.05 + (mx > 0 ? (mx - mn) / mx : 0) * mx;
+      ((r += c.r * q), (g += c.g * q), (b += c.b * q), (w += q));
+    }
+  }
+  let out = w > 0 ? new lr(r / w, g / w, b / w) : new lr(0xffffff);
+  // satura um pouco para a Jelly não ficar cinza
+  let hsl = {};
+  (out.getHSL(hsl), out.setHSL(hsl.h, Math.min(1, hsl.s * 1.35 + 0.1), rn.clamp(hsl.l, 0.3, 0.65)));
+  return ready ? (JP_COLORS[name] = out) : out;
+}
+var JPOW = {
+  icon: null,
+  since: 0,
+  time: 0,
+  target: null,
+  shot: null,
+  wasAim: !1,
+  msgT: 0,
+  base: null,
+  init() {
+    let mk = (geo, mat) => {
+      let m = new zi(geo, mat);
+      return ((m.visible = !1), (m.castShadow = !1), lV.add(m), m);
+    };
+    // marcador do item icônico: losango girando e um feixe de luz
+    ((this.mark = mk(new Ka(0.28, 0), new My({ color: 0xffffff, emissive: 0x333333 }))),
+      (this.beam = mk(new Wa(0.07, 0.07, 1, 8), new My({ color: 0xffffff, transparent: !0, opacity: 0.35, depthWrite: !1 }))),
+      // alvo da mira: losango menor, branco
+      (this.aimMark = mk(new Ka(0.18, 0), new My({ color: 0xffffff, emissive: 0x888888 }))),
+      // tentáculo do tiro: usa o próprio material da Jelly
+      (this.tube = mk(new Wa(0.06, 0.12, 1, 8), bV.jellyBody.material)),
+      (this.tip = mk(new Ja(0.15, 12, 10), bV.jellyBody.material)),
+      (this.base = { c: bV.jellyBody.material.color.clone(), e: bV.jellyBody.material.emissive.clone() }));
+  },
+  reset() {
+    ((this.icon = null), (this.shot = null), (this.target = null), this.tube && ((this.tube.visible = this.tip.visible = !1)));
+  },
+  live(it) {
+    return it && it.coleta && !it.held && hV.items.includes(it) && it.body.isEnabled();
+  },
+  pickIcon() {
+    let c = hV.items.filter((it) => this.live(it)), m = c.filter((it) => it.ico);
+    ((this.icon = (m.length ? m : c)[Math.floor(Math.random() * (m.length ? m : c).length)] || null), (this.since = this.time));
+  },
+  grabbed(it) {
+    if (it === this.icon) {
+      let s = this.time - this.since;
+      (this.toast(`Item icônico pego em ` + s.toFixed(1).replace(`.`, `,`) + ` s`), (this.icon = null), CV.tone(600, 1400, 0.25, `triangle`, 0.25));
+    }
+  },
+  toast(txt) {
+    let el = aV(`jpToast`);
+    ((el.textContent = txt), el.classList.add(`on`), (this.msgT = 2.5));
+  },
+  hud() {
+    return this.icon ? ` · item icônico: ` + Math.round(this.time - this.since) + ` s` : ``;
+  },
+  jellyPos() {
+    return bV.jellyTilt.getWorldPosition(new T());
+  },
+  frame(dt, inp) {
+    this.base || this.init();
+    this.time += dt;
+    (this.msgT > 0 && (this.msgT -= dt) <= 0 && aV(`jpToast`).classList.remove(`on`));
+    let cfg = oV, cart = yV.body.translation(), cp = new T(cart.x, cart.y, cart.z), q = qz(yV.body.rotation()), qi = q.clone().invert();
+    this.live(this.icon) || this.pickIcon();
+    let ic = this.icon, icp = ic && Kz(ic.body.translation()), icol = ic && jpColorOf(ic.coleta);
+
+    // marcador do icônico
+    let on2 = !!ic;
+    ((this.mark.visible = this.beam.visible = on2), on2 &&
+      (this.mark.position.set(icp.x, icp.y + 1.3 + Math.sin(this.time * 3) * 0.12, icp.z),
+        (this.mark.rotation.y += dt * 2.5),
+        this.mark.material.color.copy(icol),
+        this.mark.material.emissive.copy(icol).multiplyScalar(0.5),
+        this.beam.position.set(icp.x, icp.y + 4.5, icp.z),
+        this.beam.scale.set(1, 8, 1),
+        this.beam.material.color.copy(icol)));
+
+    // mira: escolhe o coletável mais perto do centro da tela, dentro do alcance e do ângulo
+    let aim = !!inp.aim && cfg.jellyMass > 0;
+    xV.aim = aim;
+    if (aim && !this.wasAim) {
+      // ao começar a mirar, a câmera gira para trás do carrinho
+      let f = new T(1, 0, 0).applyQuaternion(q);
+      this.aimYaw = Math.atan2(-f.z, -f.x);
+    }
+    if (aim && this.aimYaw !== void 0) {
+      let d = wrapAngle(this.aimYaw - xV.orbit.yaw);
+      Math.abs(d) < 0.01 ? (this.aimYaw = void 0) : (xV.orbit.yaw += d * Math.min(1, dt * 12));
+    }
+    // sem mouse (toque, teclado) a mira acompanha a frente do carrinho; com mouse, arrastar com o botão direito gira
+    if (aim && this.aimYaw === void 0 && !OV.aimMouse) {
+      let f = new T(1, 0, 0).applyQuaternion(q);
+      xV.orbit.yaw += wrapAngle(Math.atan2(-f.z, -f.x) - xV.orbit.yaw) * Math.min(1, dt * 3);
+    }
+    let jp = this.jellyPos(), fwd = new T(-Math.cos(xV.orbit.yaw), 0, -Math.sin(xV.orbit.yaw));
+    // o alvo do último quadro de mira é o que o tiro leva ao soltar
+    let prevT = this.target;
+    this.target = null;
+    if (aim && !this.shot) {
+      // círculo da mira (v18): vale o que aparece dentro dele na tela, o mais perto do centro
+      let best = 1e9, W = innerWidth, H = innerHeight, rad = (cfg.aimArea * Math.min(W, H)) / 2;
+      for (let it of hV.items) {
+        if (!this.live(it)) continue;
+        let p = Kz(it.body.translation()), dist = p.distanceTo(jp);
+        if (dist > cfg.shotRange) continue;
+        let s = p.clone().setY(p.y + 0.2).project(uV);
+        if (s.z > 1 || s.z < -1) continue;
+        let px = Math.hypot((s.x * W) / 2, (s.y * H) / 2);
+        if (px > rad) continue;
+        let sc = px + dist * 2;
+        sc < best && ((best = sc), (this.target = it));
+      }
+    }
+    let tg = this.target, tgp = tg && Kz(tg.body.translation());
+    let ret = aV(`jpAim`), rpx = Math.max(24, cfg.aimArea * Math.min(innerWidth, innerHeight)) + `px`;
+    ((ret.hidden = !aim), ret.classList.toggle(`lock`, !!tg), ret.style.width !== rpx && ((ret.style.width = ret.style.height = rpx), (ret.style.margin = `calc(${rpx} / -2) 0 0 calc(${rpx} / -2)`)));
+    ((this.aimMark.visible = !!tg), tg && (this.aimMark.position.set(tgp.x, tgp.y + 0.9, tgp.z), (this.aimMark.rotation.y -= dt * 6)));
+    // atirar (botão separado): leva o alvo do quadro anterior
+    (inp.shootQueued && ((inp.shootQueued = !1), aim && !this.shot && this.fire(jp, fwd, this.live(prevT) ? prevT : null)), (this.wasAim = aim));
+
+    // bússola: ponto de repouso da Jelly vai para o lado do alvo (na mira) ou do item icônico
+    let look = tgp || (aim ? jp.clone().addScaledVector(fwd, 5) : icp), J = yV.jelly;
+    if (look && cfg.compassLean > 0) {
+      let l = look.clone().sub(cp).applyQuaternion(qi);
+      l.y = 0;
+      let len = l.length();
+      (len > 0.01 ? l.multiplyScalar(Math.min(1, len / 2) * (aim ? 1.6 : 1) * cfg.compassLean / len) : l.set(0, 0, 0),
+        J.b.lerp(l, Math.min(1, dt * 4)));
+      // os olhos (frente da Jelly, +X) viram para o alvo
+      let want = Math.atan2(-l.z, l.x), cur = bV.jellyBody.rotation.y;
+      bV.jellyBody.rotation.y = cur + wrapAngle(want - cur) * Math.min(1, dt * 5);
+    } else (J.b.multiplyScalar(Math.max(0, 1 - dt * 4)), (bV.jellyBody.rotation.y *= Math.max(0, 1 - dt * 4)));
+    // cor: igual à do item icônico a compassNear metros, normal a compassFar
+    let mat = bV.jellyBody.material, k = 0;
+    if (ic && cfg.compassColor > 0) {
+      let dist = icp.distanceTo(cp);
+      k = rn.clamp((cfg.compassFar - dist) / Math.max(0.1, cfg.compassFar - cfg.compassNear), 0, 1) * cfg.compassColor;
+    }
+    (mat.color.copy(this.base.c).lerp(icol || this.base.c, k), mat.emissive.copy(this.base.e).lerp((icol || this.base.c).clone().multiplyScalar(0.25), k));
+
+    this.updShot(dt, jp);
+  },
+  fire(jp, fwd, tg) {
+    let to = tg ? Kz(tg.body.translation()) : jp.clone().addScaledVector(fwd, oV.shotRange).add(new T(0, 0.3, 0));
+    this.shot = { it: tg, to, k: 0, dur: Math.max(0.06, jp.distanceTo(to) / oV.shotSpeed), back: null, held: null };
+    (bV.kickSquash(0.3, 6), CV.tone(300, 700, 0.1, `sawtooth`, 0.15), xV.addTrauma(0.05));
+    try { navigator.vibrate && navigator.vibrate(15); } catch {}
+  },
+  updShot(dt, jp) {
+    let s = this.shot;
+    if (!s) return ((this.tube.visible = this.tip.visible = !1));
+    let tip;
+    if (!s.back) {
+      // ida: a ponta vai até o item (que pode estar rolando)
+      s.it && this.live(s.it) && s.to.copy(Kz(s.it.body.translation()));
+      s.k = Math.min(1, s.k + dt / s.dur);
+      tip = jp.clone().lerp(s.to, s.k * (2 - s.k));
+      if (s.k >= 1) {
+        if (s.it && this.live(s.it)) ((s.held = grabItem(s.it, oV.fetchTime)), (s.back = { k: 0, dur: oV.fetchTime }));
+        else s.back = { k: 0, dur: 0.18, from: tip.clone() };
+      }
+    } else {
+      // volta: a ponta acompanha o item voando para o cesto (ou só encolhe, se errou)
+      s.back.k = Math.min(1, s.back.k + dt / s.back.dur);
+      tip = s.held ? s.held.getWorldPosition(new T()) : s.back.from.clone().lerp(jp, s.back.k);
+      s.back.k >= 1 && (this.shot = null);
+    }
+    let d = tip.clone().sub(jp), len = d.length();
+    if (!this.shot || len < 0.05) return ((this.tube.visible = this.tip.visible = !1));
+    ((this.tube.visible = this.tip.visible = !0),
+      this.tube.position.copy(jp).addScaledVector(d, 0.5),
+      this.tube.quaternion.setFromUnitVectors(new T(0, 1, 0), d.normalize()),
+      this.tube.scale.set(1, len, 1),
+      this.tip.position.copy(tip));
+  },
+};
 
 // ==== 90_main.js ====
 var aV = (e) => document.getElementById(e),
@@ -5710,28 +5994,32 @@ function collectCones(dt) {
   for (let it of hV.items)
     if (it.coleta && !it.held && oV.jellyMass > 0) {
       let p = it.body.translation(), dx = p.x - cp.x, dz = p.z - cp.z;
-      if (dx * dx + dz * dz < 5.3 && Math.abs(p.y - cp.y) < 1.6) {
-        // o item de física some e uma cópia passa a morar dentro do cesto (filha do bodyRig, como a Jelly);
-        // itens grandes encolhem para caber (maior lado até 0,85 m)
-        ((it.held = !0), it.body.setEnabled(!1), (it.mesh.visible = !1));
-        let { h } = kitBox(it.coleta), hk = Math.min(it.k, 0.425 / Math.max(h[0], h[1], h[2])),
-          k = HELD.length, [sx, sz] = CONE_SLOTS[k % 8], c = kitCentered(it.coleta, hk, -h[1] * hk);
-        (bV.bodyRig.add(c), bV.bodyRig.updateWorldMatrix(!0, !1));
-        ((c.userData.from = bV.bodyRig.worldToLocal(new T(p.x, p.y, p.z))), (c.userData.to = new T(sx, h[1] * hk - 0.1 + Math.floor(k / 8) * 0.45, sz)),
-          (c.userData.toQ = new on().setFromAxisAngle(new T(sz, 0, -sx).normalize(), 0.18)), (c.userData.k = 0), c.position.copy(c.userData.from), HELD.push(c));
-        (bV.kickSquash(0.22, 5), CV.tone(420, 980, 0.14, `triangle`, 0.22), xV.addTrauma(0.08));
-      }
+      dx * dx + dz * dz < 5.3 && Math.abs(p.y - cp.y) < 1.6 && grabItem(it);
     }
   for (let c of HELD) {
     let u = c.userData;
     if (u.k >= 1) continue;
-    u.k = Math.min(1, u.k + dt / 0.35);
+    u.k = Math.min(1, u.k + dt / u.dur);
     let e = 1 - (1 - u.k) * (1 - u.k);
     (c.position.lerpVectors(u.from, u.to, e), (c.position.y += Math.sin(u.k * Math.PI) * 0.9), c.quaternion.slerpQuaternions(new on(), u.toQ, e));
   }
 }
+// o item de física some e uma cópia passa a morar dentro do cesto (filha do bodyRig, como a Jelly);
+// itens grandes encolhem para caber (maior lado até 0,85 m). dur: tempo do voo até o cesto (o tiro da gelatina usa um maior)
+function grabItem(it, dur = 0.35) {
+  let p = it.body.translation();
+  ((it.held = !0), it.body.setEnabled(!1), (it.mesh.visible = !1));
+  let { h } = kitBox(it.coleta), hk = Math.min(it.k, 0.425 / Math.max(h[0], h[1], h[2])),
+    k = HELD.length, [sx, sz] = CONE_SLOTS[k % 8], c = kitCentered(it.coleta, hk, -h[1] * hk);
+  (bV.bodyRig.add(c), bV.bodyRig.updateWorldMatrix(!0, !1));
+  ((c.userData.from = bV.bodyRig.worldToLocal(new T(p.x, p.y, p.z))), (c.userData.to = new T(sx, h[1] * hk - 0.1 + Math.floor(k / 8) * 0.45, sz)),
+    (c.userData.toQ = new on().setFromAxisAngle(new T(sz, 0, -sx).normalize(), 0.18)), (c.userData.k = 0), (c.userData.dur = dur), c.position.copy(c.userData.from), HELD.push(c));
+  (bV.kickSquash(0.22, 5), CV.tone(420, 980, 0.14, `triangle`, 0.22), xV.addTrauma(0.08));
+  JPOW.grabbed(it);
+  return c;
+}
 function kV() {
-  (HELD.forEach((c) => c.removeFromParent()), (HELD.length = 0));
+  (HELD.forEach((c) => c.removeFromParent()), (HELD.length = 0), JPOW.reset());
   (hV.reset(), CV.unlock(), CV.tone(500, 900, 0.15, `triangle`, 0.15));
 }
 var AV = iV({
@@ -5754,7 +6042,10 @@ function NV() {
     t = Math.min(0.1, (e - jV) / 1e3);
   jV = e;
   if (EDITOR.on) return (EDITOR.frame(t), GRASS.forEach((g) => g.update(uV.position)), cV.render(lV, uV));
-  let n = mapControls(OV.read()),
+  let n = mapControls(OV.read());
+  // mira da gelatina: o Abanab tira os pés do chão e o empurrão perde força
+  n.aim && n.throttle > 0 && (n.throttle *= oV.aimPush);
+  let
     r = pV.update(t, (e) => {
       (yV.preStep(e, n),
         fV.step(mV),
@@ -5783,6 +6074,7 @@ function NV() {
     dV.target.position.copy(xV.focus),
     GRASS.forEach((g) => (g.uCar.value.copy(bV.root.position), g.update(uV.position))),
     collectCones(t),
+    JPOW.frame(t, n),
     gV.update(t, oV.grassRecovery),
     SV.update(t),
     CV.updateEngine(Math.abs(i.speed), Math.abs(n.throttle), i.boosting, i.surface.g < 0.5 ? 0.3 : i.surface.r > 2 ? 0.6 : 1),
@@ -5791,7 +6083,7 @@ function NV() {
     (aV(`speedNum`).textContent = Math.round(Math.abs(i.speed) * 3.6)),
     aV(`speed`).classList.toggle(`boost`, i.boosting),
     (aV(`profileName`).textContent =
-      yV.profile.name + (HELD.length ? ` · itens: ` + HELD.length : ``) + (i.surface !== SURF0 ? ` · piso: ` + i.surface.name : ``) + (i.locked ? (yV.profile.rearCaster ? ` · rodízios de trás travados` : ` · rodas de trás travadas`) : ``)),
+      yV.profile.name + JPOW.hud() + (HELD.length ? ` · itens: ` + HELD.length : ``) + (i.surface !== SURF0 ? ` · piso: ` + i.surface.name : ``) + (i.locked ? (yV.profile.rearCaster ? ` · rodízios de trás travados` : ` · rodas de trás travadas`) : ``)),
     OV.firstInputAt &&
       e - OV.firstInputAt > 9e3 &&
       aV(`hint`).classList.add(`gone`),
@@ -5833,7 +6125,7 @@ function PV() {
   (aV(`chkCutout`).checked = !!oV.cutout),
   aV(`chkCutout`).addEventListener(`change`, (e) => ((oV.cutout = e.target.checked ? 1 : 0), _z(oV))),
   aV(`view`).focus(),
-  (window.__lab = { cart: yV, cfg: oV, input: OV, world: fV, camera: uV, cam: xV, mapControls, WORLD, HELD, vis: bV, items: hV, PIECES, EDITOR, SURFACES, LEVEL: () => LEVEL }));
+  (window.__lab = { cart: yV, cfg: oV, input: OV, world: fV, camera: uV, cam: xV, mapControls, WORLD, HELD, JPOW, vis: bV, items: hV, PIECES, EDITOR, SURFACES, LEVEL: () => LEVEL }));
 
 // ==== 95_editor.js ====
 // Editor de nível (etapa 1): câmera livre, lista de modelos, colocar, mover, girar, escalar, duplicar e apagar peças
@@ -5932,7 +6224,7 @@ var EDITOR = (() => {
       let p = cur();
       if ((($(`edSel`).hidden = !p), (box.visible = !!p), !p)) return (gizmo.detach(), void 0);
       let c = catInfo(p.m), col = PIECES.colOf(p), cl = PIECES.isCollect(p);
-      (($(`edName`).textContent = pretty(p.m) + ` · ` + c.g), ($(`edCol`).value = p.col === void 0 || p.col === 1 ? `` : String(p.col)), ($(`edCol`).disabled = PIECES.isLoose(p)), ($(`edCollect`).checked = cl));
+      (($(`edName`).textContent = pretty(p.m) + ` · ` + c.g), ($(`edCol`).value = p.col === void 0 || p.col === 1 ? `` : String(p.col)), ($(`edCol`).disabled = PIECES.isLoose(p)), ($(`edCollect`).checked = cl), ($(`edIco`).checked = !!p.ico), ($(`edIco`).disabled = !cl));
       ($(`edColDef`).textContent = `Padrão (` + (COL_NAMES[typeof c.col === `string` ? c.col : c.col ? `box` : 0] || `caixa`) + `)`);
       fields();
       (gizmoSync(), gizmo.attach(gobj));
@@ -6061,6 +6353,8 @@ var EDITOR = (() => {
       let d = !!catInfo(p.m).c;
       e.target.checked === d ? delete p.c : (p.c = e.target.checked ? 1 : 0);
     }, !0));
+  // item icônico (v16): a gelatina aponta para ele; sem nenhum marcado, o jogo sorteia um coletável
+  $(`edIco`).addEventListener(`change`, (e) => edit((p) => (e.target.checked ? (p.ico = 1) : delete p.ico), !0));
   $(`edSnap`).addEventListener(`change`, (e) => ((snap = e.target.checked), gsnap()));
   $(`edLibBtn`).addEventListener(`click`, () => showLib($(`edLib`).hidden));
   $(`edFileBtn`).addEventListener(`click`, () => showFile($(`edFile`).hidden));
